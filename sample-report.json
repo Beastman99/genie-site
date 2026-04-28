@@ -1,0 +1,86 @@
+{
+  "sample_id": "HG00096",
+  "product": "Genie",
+  "report_type": "trait_report",
+  "traits": [
+    {
+      "trait": "eye_color",
+      "display_name": "Eye Color",
+      "type": "single_variant_heuristic",
+      "status": "derived",
+      "source": {
+        "simple_traits_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_eye_traits.json"
+      },
+      "result_label": "blue / lighter eyes more likely",
+      "summary": "Estimated from a simple eye-color marker.",
+      "variant": {
+        "id": "rs12913832",
+        "chrom": "15",
+        "pos": "28365618",
+        "ref": "A",
+        "alt": "G",
+        "genotype": "1/1"
+      }
+    },
+    {
+      "trait": "hair-color",
+      "display_name": "Hair color",
+      "type": "polygenic_demo",
+      "result_label": "hair-color score computed",
+      "summary": "This result reflects a directional hair-colour signal rather than a fixed shade prediction.",
+      "coverage_note": "Based on 95 matched variants from the sample model.",
+      "sample_id": "HG00096",
+      "score": {
+        "effect_weight_sum": -18.6349,
+        "effect_weight_avg": -0.0980785,
+        "allele_ct": 190,
+        "named_allele_dosage_sum": 150.0
+      },
+      "source": {
+        "pgs_id": "PGS002647",
+        "pgs_name": "pigment_HAIR.PolyFun-pred",
+        "summary_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_hair_top100/summary.json"
+      }
+    },
+    {
+      "trait": "height",
+      "display_name": "Height",
+      "type": "polygenic_demo",
+      "result_label": "lower height-associated polygenic signal",
+      "summary": "This result reflects relative height-associated signal rather than a centimetre estimate.",
+      "coverage_note": "Based on 100 matched variants from the sample model.",
+      "sample_id": "HG00096",
+      "score": {
+        "effect_weight_sum": -0.16757,
+        "effect_weight_avg": -0.000837849,
+        "allele_ct": 200,
+        "named_allele_dosage_sum": 76.0
+      },
+      "source": {
+        "pgs_id": "PGS002977",
+        "pgs_name": "ExPRSweb_Height_GIANT-Yang2012-height_DBSLMM_MGI_20211120",
+        "summary_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_height_top100/summary.json"
+      }
+    },
+    {
+      "trait": "left-handedness",
+      "display_name": "Left-handedness",
+      "type": "polygenic_demo",
+      "result_label": "lower left-handedness-associated signal",
+      "summary": "This result reflects relative handedness-associated signal rather than a direct prediction.",
+      "coverage_note": "Based on 100 matched variants from the sample model.",
+      "sample_id": "HG00096",
+      "score": {
+        "effect_weight_sum": -0.00303775,
+        "effect_weight_avg": -1.51887e-05,
+        "allele_ct": 200,
+        "named_allele_dosage_sum": 41.0
+      },
+      "source": {
+        "pgs_id": "PGS002151",
+        "pgs_name": "portability-ldpred2_left_handed",
+        "summary_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_left_top100/summary.json"
+      }
+    }
+  ]
+}

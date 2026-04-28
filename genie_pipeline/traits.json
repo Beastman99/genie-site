@@ -1,0 +1,90 @@
+{
+  "traits": [
+    {
+      "slug": "intelligence",
+      "label": "Intelligence",
+      "search_terms": ["intelligence", "cognitive ability", "general intelligence"]
+    },
+    {
+      "slug": "adhd",
+      "label": "ADHD",
+      "search_terms": ["attention deficit hyperactivity disorder", "ADHD"]
+    },
+    {
+      "slug": "autism",
+      "label": "Autism",
+      "search_terms": ["autism spectrum disorder", "autism"]
+    },
+    {
+      "slug": "schizophrenia",
+      "label": "Schizophrenia",
+      "search_terms": ["schizophrenia"]
+    },
+    {
+      "slug": "anxiety",
+      "label": "Anxiety",
+      "search_terms": ["anxiety", "anxiety disorder"]
+    },
+    {
+      "slug": "depression",
+      "label": "Depression",
+      "search_terms": ["major depressive disorder", "depression"]
+    },
+    {
+      "slug": "bipolar-disorder",
+      "label": "Bipolar disorder",
+      "search_terms": ["bipolar disorder"]
+    },
+    {
+      "slug": "ocd",
+      "label": "OCD",
+      "search_terms": ["obsessive-compulsive disorder", "OCD"]
+    },
+    {
+      "slug": "insomnia",
+      "label": "Insomnia",
+      "search_terms": ["insomnia"]
+    },
+    {
+      "slug": "migraine",
+      "label": "Migraine",
+      "search_terms": ["migraine"]
+    },
+    {
+      "slug": "height",
+      "label": "Height",
+      "search_terms": ["height", "body height"]
+    },
+    {
+      "slug": "eye-color",
+      "label": "Eye color",
+      "search_terms": ["eye color", "eye colour"]
+    },
+    {
+      "slug": "hair-color",
+      "label": "Hair color",
+      "search_terms": ["hair color", "hair colour"]
+    },
+    {
+      "slug": "bmi",
+      "label": "BMI",
+      "search_terms": ["body mass index", "BMI"]
+    },
+    {
+      "slug": "left-handedness",
+      "label": "Left-handedness",
+      "search_terms": ["handedness", "left-handedness"]
+    },
+    {
+      "slug": "male-pattern-baldness",
+      "label": "Male-pattern baldness",
+      "search_terms": ["male pattern baldness", "alopecia"]
+    },
+    {
+      "slug": "severe-acne",
+      "label": "Severe acne",
+      "search_terms": ["acne", "severe acne"]
+    }
+  ]
+}
+

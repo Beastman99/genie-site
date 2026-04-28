@@ -1,0 +1,1465 @@
+{
+  "generated_from": "genie_pipeline/traits.json",
+  "traits": [
+    {
+      "slug": "intelligence",
+      "label": "Intelligence",
+      "search_terms": [
+        "intelligence",
+        "cognitive ability",
+        "general intelligence"
+      ],
+      "matched_terms": [
+        {
+          "term": "intelligence",
+          "matched_trait_labels": [
+            "intelligence"
+          ]
+        },
+        {
+          "term": "cognitive ability",
+          "matched_trait_labels": [
+            "intelligence"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS003724",
+        "name": "IQ",
+        "trait_reported": "Intelligence quotient",
+        "trait_mapped": [
+          "intelligence"
+        ],
+        "variants_number": 6683248,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2023-04-28",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003724/ScoringFiles/PGS003724.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003724/ScoringFiles/Harmonized/PGS003724_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003724/ScoringFiles/Harmonized/PGS003724_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS003724",
+          "name": "IQ",
+          "trait_reported": "Intelligence quotient",
+          "trait_mapped": [
+            "intelligence"
+          ],
+          "variants_number": 6683248,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-28",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003724/ScoringFiles/PGS003724.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003724/ScoringFiles/Harmonized/PGS003724_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003724/ScoringFiles/Harmonized/PGS003724_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS004427",
+          "name": "X20016.score",
+          "trait_reported": "Fluid intelligence score",
+          "trait_mapped": [
+            "intelligence"
+          ],
+          "variants_number": 1059939,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2024-03-18",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004427/ScoringFiles/PGS004427.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004427/ScoringFiles/Harmonized/PGS004427_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004427/ScoringFiles/Harmonized/PGS004427_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003510",
+          "name": "cont-decay-fluid_intelligence",
+          "trait_reported": "Fluid intelligence score",
+          "trait_mapped": [
+            "intelligence"
+          ],
+          "variants_number": 979739,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-12",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003510/ScoringFiles/PGS003510.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003510/ScoringFiles/Harmonized/PGS003510_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003510/ScoringFiles/Harmonized/PGS003510_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002135",
+          "name": "portability-ldpred2_fluid_intelligence",
+          "trait_reported": "Fluid intelligence score",
+          "trait_mapped": [
+            "intelligence"
+          ],
+          "variants_number": 903259,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-01-10",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002135/ScoringFiles/PGS002135.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002135/ScoringFiles/Harmonized/PGS002135_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002135/ScoringFiles/Harmonized/PGS002135_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS001919",
+          "name": "portability-PLR_fluid_intelligence",
+          "trait_reported": "Fluid intelligence score",
+          "trait_mapped": [
+            "intelligence"
+          ],
+          "variants_number": 26145,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-01-10",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001919/ScoringFiles/PGS001919.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001919/ScoringFiles/Harmonized/PGS001919_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001919/ScoringFiles/Harmonized/PGS001919_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "adhd",
+      "label": "ADHD",
+      "search_terms": [
+        "attention deficit hyperactivity disorder",
+        "ADHD"
+      ],
+      "matched_terms": [
+        {
+          "term": "attention deficit hyperactivity disorder",
+          "matched_trait_labels": [
+            "attention deficit hyperactivity disorder"
+          ]
+        },
+        {
+          "term": "ADHD",
+          "matched_trait_labels": [
+            "attention deficit hyperactivity disorder"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS002746",
+        "name": "PRS_ADHD",
+        "trait_reported": "Attention-deficit hyperactivity disorder",
+        "trait_mapped": [
+          "attention deficit hyperactivity disorder"
+        ],
+        "variants_number": 513659,
+        "weight_type": "log(OR)",
+        "genome_build": "NR",
+        "date_release": "2022-09-08",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002746/ScoringFiles/PGS002746.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002746/ScoringFiles/Harmonized/PGS002746_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002746/ScoringFiles/Harmonized/PGS002746_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS002746",
+          "name": "PRS_ADHD",
+          "trait_reported": "Attention-deficit hyperactivity disorder",
+          "trait_mapped": [
+            "attention deficit hyperactivity disorder"
+          ],
+          "variants_number": 513659,
+          "weight_type": "log(OR)",
+          "genome_build": "NR",
+          "date_release": "2022-09-08",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002746/ScoringFiles/PGS002746.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002746/ScoringFiles/Harmonized/PGS002746_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002746/ScoringFiles/Harmonized/PGS002746_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003753",
+          "name": "PRS35445_ADHD",
+          "trait_reported": "Attention deficit hyperactivity disorder",
+          "trait_mapped": [
+            "attention deficit hyperactivity disorder"
+          ],
+          "variants_number": 35445,
+          "weight_type": "log(OR)",
+          "genome_build": "NR",
+          "date_release": "2023-06-22",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003753/ScoringFiles/PGS003753.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003753/ScoringFiles/Harmonized/PGS003753_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003753/ScoringFiles/Harmonized/PGS003753_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "autism",
+      "label": "Autism",
+      "search_terms": [
+        "autism spectrum disorder",
+        "autism"
+      ],
+      "matched_terms": [
+        {
+          "term": "autism spectrum disorder",
+          "matched_trait_labels": [
+            "autism spectrum disorder"
+          ]
+        },
+        {
+          "term": "autism",
+          "matched_trait_labels": [
+            "autism spectrum disorder"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS002790",
+        "name": "ASD_SDPR",
+        "trait_reported": "Autism spectrum disorder",
+        "trait_mapped": [
+          "autism spectrum disorder"
+        ],
+        "variants_number": 916713,
+        "weight_type": "beta",
+        "genome_build": "hg19",
+        "date_release": "2022-09-29",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002790/ScoringFiles/PGS002790.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002790/ScoringFiles/Harmonized/PGS002790_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002790/ScoringFiles/Harmonized/PGS002790_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS002790",
+          "name": "ASD_SDPR",
+          "trait_reported": "Autism spectrum disorder",
+          "trait_mapped": [
+            "autism spectrum disorder"
+          ],
+          "variants_number": 916713,
+          "weight_type": "beta",
+          "genome_build": "hg19",
+          "date_release": "2022-09-29",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002790/ScoringFiles/PGS002790.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002790/ScoringFiles/Harmonized/PGS002790_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002790/ScoringFiles/Harmonized/PGS002790_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS000327",
+          "name": "ASD2019",
+          "trait_reported": "Autism spectrum disorder",
+          "trait_mapped": [
+            "autism spectrum disorder"
+          ],
+          "variants_number": 35087,
+          "weight_type": "NR",
+          "genome_build": "GRCh37",
+          "date_release": "2020-09-18",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000327/ScoringFiles/PGS000327.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000327/ScoringFiles/Harmonized/PGS000327_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000327/ScoringFiles/Harmonized/PGS000327_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "schizophrenia",
+      "label": "Schizophrenia",
+      "search_terms": [
+        "schizophrenia"
+      ],
+      "matched_terms": [
+        {
+          "term": "schizophrenia",
+          "matched_trait_labels": [
+            "schizophrenia"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS000135",
+        "name": "SCZ_MTS",
+        "trait_reported": "Schizophrenia",
+        "trait_mapped": [
+          "schizophrenia"
+        ],
+        "variants_number": 972439,
+        "weight_type": "NR",
+        "genome_build": "GRCh37",
+        "date_release": "2020-03-27",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000135/ScoringFiles/PGS000135.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000135/ScoringFiles/Harmonized/PGS000135_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000135/ScoringFiles/Harmonized/PGS000135_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS000135",
+          "name": "SCZ_MTS",
+          "trait_reported": "Schizophrenia",
+          "trait_mapped": [
+            "schizophrenia"
+          ],
+          "variants_number": 972439,
+          "weight_type": "NR",
+          "genome_build": "GRCh37",
+          "date_release": "2020-03-27",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000135/ScoringFiles/PGS000135.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000135/ScoringFiles/Harmonized/PGS000135_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000135/ScoringFiles/Harmonized/PGS000135_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002785",
+          "name": "SCZ_SDPR",
+          "trait_reported": "Schizophrenia",
+          "trait_mapped": [
+            "schizophrenia"
+          ],
+          "variants_number": 964422,
+          "weight_type": "beta",
+          "genome_build": "hg19",
+          "date_release": "2022-09-29",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002785/ScoringFiles/PGS002785.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002785/ScoringFiles/Harmonized/PGS002785_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002785/ScoringFiles/Harmonized/PGS002785_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS000136",
+          "name": "SCZ_PBK",
+          "trait_reported": "Schizophrenia",
+          "trait_mapped": [
+            "schizophrenia"
+          ],
+          "variants_number": 833502,
+          "weight_type": "NR",
+          "genome_build": "GRCh37",
+          "date_release": "2020-03-27",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000136/ScoringFiles/PGS000136.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000136/ScoringFiles/Harmonized/PGS000136_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000136/ScoringFiles/Harmonized/PGS000136_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS000134",
+          "name": "SCZ_GHS",
+          "trait_reported": "Schizophrenia",
+          "trait_mapped": [
+            "schizophrenia"
+          ],
+          "variants_number": 830589,
+          "weight_type": "NR",
+          "genome_build": "GRCh37",
+          "date_release": "2020-03-27",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000134/ScoringFiles/PGS000134.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000134/ScoringFiles/Harmonized/PGS000134_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000134/ScoringFiles/Harmonized/PGS000134_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS000133",
+          "name": "SCZ_BVU",
+          "trait_reported": "Schizophrenia",
+          "trait_mapped": [
+            "schizophrenia"
+          ],
+          "variants_number": 604645,
+          "weight_type": "NR",
+          "genome_build": "GRCh37",
+          "date_release": "2020-03-27",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000133/ScoringFiles/PGS000133.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000133/ScoringFiles/Harmonized/PGS000133_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000133/ScoringFiles/Harmonized/PGS000133_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "anxiety",
+      "label": "Anxiety",
+      "search_terms": [
+        "anxiety",
+        "anxiety disorder"
+      ],
+      "matched_terms": [
+        {
+          "term": "anxiety",
+          "matched_trait_labels": [
+            "anxiety disorder",
+            "anxiety measurement",
+            "post-traumatic stress disorder",
+            "seeing a general practitioner for nerves, anxiety, tension or depression, self-reported",
+            "seeing a psychiatrist for nerves, anxiety, tension or depression, self-reported"
+          ]
+        },
+        {
+          "term": "anxiety disorder",
+          "matched_trait_labels": [
+            "anxiety disorder",
+            "post-traumatic stress disorder"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS004451",
+        "name": "disease.F41.score",
+        "trait_reported": "F41 (Other anxiety disorders)",
+        "trait_mapped": [
+          "anxiety disorder"
+        ],
+        "variants_number": 1059939,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2024-03-18",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004451/ScoringFiles/PGS004451.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004451/ScoringFiles/Harmonized/PGS004451_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004451/ScoringFiles/Harmonized/PGS004451_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS004451",
+          "name": "disease.F41.score",
+          "trait_reported": "F41 (Other anxiety disorders)",
+          "trait_mapped": [
+            "anxiety disorder"
+          ],
+          "variants_number": 1059939,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2024-03-18",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004451/ScoringFiles/PGS004451.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004451/ScoringFiles/Harmonized/PGS004451_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004451/ScoringFiles/Harmonized/PGS004451_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS004521",
+          "name": "meta.F41.score",
+          "trait_reported": "F41 (Other anxiety disorders)",
+          "trait_mapped": [
+            "anxiety disorder"
+          ],
+          "variants_number": 1059939,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2024-03-18",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004521/ScoringFiles/PGS004521.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004521/ScoringFiles/Harmonized/PGS004521_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004521/ScoringFiles/Harmonized/PGS004521_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS005393",
+          "name": "PGS_SEXUAL_ASSAULT_PTSD",
+          "trait_reported": "Post-traumatic stress disorder",
+          "trait_mapped": [
+            "post-traumatic stress disorder"
+          ],
+          "variants_number": 53705,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2026-01-19",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS005393/ScoringFiles/PGS005393.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS005393/ScoringFiles/Harmonized/PGS005393_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS005393/ScoringFiles/Harmonized/PGS005393_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS000140",
+          "name": "GPpsy",
+          "trait_reported": "Broad Depression (seen a General Practitioner for nerves, anxiety, tension or depression)",
+          "trait_mapped": [
+            "seeing a general practitioner for nerves, anxiety, tension or depression, self-reported",
+            "depressive disorder"
+          ],
+          "variants_number": 24665,
+          "weight_type": "NR",
+          "genome_build": "NR",
+          "date_release": "2020-04-29",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000140/ScoringFiles/PGS000140.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000140/ScoringFiles/Harmonized/PGS000140_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000140/ScoringFiles/Harmonized/PGS000140_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS000141",
+          "name": "Psypsy",
+          "trait_reported": "Seen a psychiatrist for nerves, anxiety, tension or depression",
+          "trait_mapped": [
+            "seeing a psychiatrist for nerves, anxiety, tension or depression, self-reported",
+            "depressive disorder"
+          ],
+          "variants_number": 22728,
+          "weight_type": "NR",
+          "genome_build": "NR",
+          "date_release": "2020-04-29",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000141/ScoringFiles/PGS000141.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000141/ScoringFiles/Harmonized/PGS000141_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000141/ScoringFiles/Harmonized/PGS000141_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "depression",
+      "label": "Depression",
+      "search_terms": [
+        "major depressive disorder",
+        "depression"
+      ],
+      "matched_terms": [
+        {
+          "term": "major depressive disorder",
+          "matched_trait_labels": [
+            "major depressive disorder"
+          ]
+        },
+        {
+          "term": "depression",
+          "matched_trait_labels": [
+            "bipolar disorder",
+            "depressive disorder",
+            "major depressive disorder",
+            "neurotic disorder",
+            "seeing a general practitioner for nerves, anxiety, tension or depression, self-reported"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS003576",
+        "name": "AutoImpAll.LifetimeMDD",
+        "trait_reported": "Major Depressive Disorder (Lifetime)",
+        "trait_mapped": [
+          "major depressive disorder"
+        ],
+        "variants_number": 5776312,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2023-04-12",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003576/ScoringFiles/PGS003576.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003576/ScoringFiles/Harmonized/PGS003576_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003576/ScoringFiles/Harmonized/PGS003576_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS003576",
+          "name": "AutoImpAll.LifetimeMDD",
+          "trait_reported": "Major Depressive Disorder (Lifetime)",
+          "trait_mapped": [
+            "major depressive disorder"
+          ],
+          "variants_number": 5776312,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-12",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003576/ScoringFiles/PGS003576.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003576/ScoringFiles/Harmonized/PGS003576_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003576/ScoringFiles/Harmonized/PGS003576_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003577",
+          "name": "AutoImpOnly.LifetimeMDD",
+          "trait_reported": "Major Depressive Disorder (Lifetime)",
+          "trait_mapped": [
+            "major depressive disorder"
+          ],
+          "variants_number": 5776312,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-12",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003577/ScoringFiles/PGS003577.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003577/ScoringFiles/Harmonized/PGS003577_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003577/ScoringFiles/Harmonized/PGS003577_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003584",
+          "name": "SoftImpAll.LifetimeMDD",
+          "trait_reported": "Major Depressive Disorder (Lifetime)",
+          "trait_mapped": [
+            "major depressive disorder"
+          ],
+          "variants_number": 5776312,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-12",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003584/ScoringFiles/PGS003584.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003584/ScoringFiles/Harmonized/PGS003584_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003584/ScoringFiles/Harmonized/PGS003584_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003585",
+          "name": "SoftImpOnly.LifetimeMDD",
+          "trait_reported": "Major Depressive Disorder (Lifetime)",
+          "trait_mapped": [
+            "major depressive disorder"
+          ],
+          "variants_number": 5776312,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-12",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003585/ScoringFiles/PGS003585.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003585/ScoringFiles/Harmonized/PGS003585_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003585/ScoringFiles/Harmonized/PGS003585_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003581",
+          "name": "MTAG.Envs.LifetimeMDD",
+          "trait_reported": "Major Depressive Disorder (Lifetime)",
+          "trait_mapped": [
+            "major depressive disorder"
+          ],
+          "variants_number": 4861398,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-12",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003581/ScoringFiles/PGS003581.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003581/ScoringFiles/Harmonized/PGS003581_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003581/ScoringFiles/Harmonized/PGS003581_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "bipolar-disorder",
+      "label": "Bipolar disorder",
+      "search_terms": [
+        "bipolar disorder"
+      ],
+      "matched_terms": [
+        {
+          "term": "bipolar disorder",
+          "matched_trait_labels": [
+            "bipolar disorder",
+            "bipolar I disorder",
+            "bipolar II disorder"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS002786",
+        "name": "BD_SDPR",
+        "trait_reported": "Bipolar disorder",
+        "trait_mapped": [
+          "bipolar disorder"
+        ],
+        "variants_number": 948996,
+        "weight_type": "beta",
+        "genome_build": "hg19",
+        "date_release": "2022-09-29",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002786/ScoringFiles/PGS002786.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002786/ScoringFiles/Harmonized/PGS002786_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002786/ScoringFiles/Harmonized/PGS002786_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS002786",
+          "name": "BD_SDPR",
+          "trait_reported": "Bipolar disorder",
+          "trait_mapped": [
+            "bipolar disorder"
+          ],
+          "variants_number": 948996,
+          "weight_type": "beta",
+          "genome_build": "hg19",
+          "date_release": "2022-09-29",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002786/ScoringFiles/PGS002786.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002786/ScoringFiles/Harmonized/PGS002786_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002786/ScoringFiles/Harmonized/PGS002786_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002787",
+          "name": "BD1_SDPR",
+          "trait_reported": "Type 1 bipolar disorder",
+          "trait_mapped": [
+            "bipolar I disorder"
+          ],
+          "variants_number": 937511,
+          "weight_type": "beta",
+          "genome_build": "hg19",
+          "date_release": "2022-09-29",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002787/ScoringFiles/PGS002787.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002787/ScoringFiles/Harmonized/PGS002787_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002787/ScoringFiles/Harmonized/PGS002787_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002788",
+          "name": "BD2_SDPR",
+          "trait_reported": "Type 2 bipolar disorder",
+          "trait_mapped": [
+            "bipolar II disorder"
+          ],
+          "variants_number": 935292,
+          "weight_type": "beta",
+          "genome_build": "hg19",
+          "date_release": "2022-09-29",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002788/ScoringFiles/PGS002788.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002788/ScoringFiles/Harmonized/PGS002788_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002788/ScoringFiles/Harmonized/PGS002788_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "ocd",
+      "label": "OCD",
+      "search_terms": [
+        "obsessive-compulsive disorder",
+        "OCD"
+      ],
+      "matched_terms": [],
+      "selected_candidate": null,
+      "candidates": []
+    },
+    {
+      "slug": "insomnia",
+      "label": "Insomnia",
+      "search_terms": [
+        "insomnia"
+      ],
+      "matched_terms": [
+        {
+          "term": "insomnia",
+          "matched_trait_labels": [
+            "insomnia",
+            "insomnia measurement"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS003322",
+        "name": "ExPRSweb_Insomnia_1160_DBSLMM_MGI_20211120",
+        "trait_reported": "Insomnia",
+        "trait_mapped": [
+          "insomnia"
+        ],
+        "variants_number": 8590163,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2022-11-23",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003322/ScoringFiles/PGS003322.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003322/ScoringFiles/Harmonized/PGS003322_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003322/ScoringFiles/Harmonized/PGS003322_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS003322",
+          "name": "ExPRSweb_Insomnia_1160_DBSLMM_MGI_20211120",
+          "trait_reported": "Insomnia",
+          "trait_mapped": [
+            "insomnia"
+          ],
+          "variants_number": 8590163,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003322/ScoringFiles/PGS003322.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003322/ScoringFiles/Harmonized/PGS003322_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003322/ScoringFiles/Harmonized/PGS003322_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003327",
+          "name": "ExPRSweb_Insomnia_1200_DBSLMM_MGI_20211120",
+          "trait_reported": "Insomnia",
+          "trait_mapped": [
+            "insomnia"
+          ],
+          "variants_number": 6214923,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003327/ScoringFiles/PGS003327.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003327/ScoringFiles/Harmonized/PGS003327_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003327/ScoringFiles/Harmonized/PGS003327_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS000908",
+          "name": "PRS_Insomnia",
+          "trait_reported": "Insomnia",
+          "trait_mapped": [
+            "insomnia"
+          ],
+          "variants_number": 2746982,
+          "weight_type": "NR",
+          "genome_build": "hg19",
+          "date_release": "2021-10-07",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000908/ScoringFiles/PGS000908.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000908/ScoringFiles/Harmonized/PGS000908_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS000908/ScoringFiles/Harmonized/PGS000908_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003323",
+          "name": "ExPRSweb_Insomnia_1160_PRSCS_MGI_20211120",
+          "trait_reported": "Insomnia",
+          "trait_mapped": [
+            "insomnia"
+          ],
+          "variants_number": 1113832,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003323/ScoringFiles/PGS003323.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003323/ScoringFiles/Harmonized/PGS003323_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003323/ScoringFiles/Harmonized/PGS003323_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003328",
+          "name": "ExPRSweb_Insomnia_1200_PRSCS_MGI_20211120",
+          "trait_reported": "Insomnia",
+          "trait_mapped": [
+            "insomnia"
+          ],
+          "variants_number": 1065129,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003328/ScoringFiles/PGS003328.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003328/ScoringFiles/Harmonized/PGS003328_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003328/ScoringFiles/Harmonized/PGS003328_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "migraine",
+      "label": "Migraine",
+      "search_terms": [
+        "migraine"
+      ],
+      "matched_terms": [
+        {
+          "term": "migraine",
+          "matched_trait_labels": [
+            "migraine disorder"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS004799",
+        "name": "migraine_PRSmixPlus_eur",
+        "trait_reported": "Migraine",
+        "trait_mapped": [
+          "migraine disorder"
+        ],
+        "variants_number": 4319950,
+        "weight_type": "beta",
+        "genome_build": "hg38",
+        "date_release": "2024-03-28",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004799/ScoringFiles/PGS004799.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004799/ScoringFiles/Harmonized/PGS004799_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004799/ScoringFiles/Harmonized/PGS004799_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS004799",
+          "name": "migraine_PRSmixPlus_eur",
+          "trait_reported": "Migraine",
+          "trait_mapped": [
+            "migraine disorder"
+          ],
+          "variants_number": 4319950,
+          "weight_type": "beta",
+          "genome_build": "hg38",
+          "date_release": "2024-03-28",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004799/ScoringFiles/PGS004799.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004799/ScoringFiles/Harmonized/PGS004799_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004799/ScoringFiles/Harmonized/PGS004799_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS004798",
+          "name": "migraine_PRSmix_sas",
+          "trait_reported": "Migraine",
+          "trait_mapped": [
+            "migraine disorder"
+          ],
+          "variants_number": 3984158,
+          "weight_type": "beta",
+          "genome_build": "hg38",
+          "date_release": "2024-03-28",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004798/ScoringFiles/PGS004798.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004798/ScoringFiles/Harmonized/PGS004798_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004798/ScoringFiles/Harmonized/PGS004798_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS004800",
+          "name": "migraine_PRSmixPlus_sas",
+          "trait_reported": "Migraine",
+          "trait_mapped": [
+            "migraine disorder"
+          ],
+          "variants_number": 2968987,
+          "weight_type": "beta",
+          "genome_build": "hg38",
+          "date_release": "2024-03-28",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004800/ScoringFiles/PGS004800.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004800/ScoringFiles/Harmonized/PGS004800_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004800/ScoringFiles/Harmonized/PGS004800_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS001282",
+          "name": "GBE_HC815",
+          "trait_reported": "Migraine (time-to-event)",
+          "trait_mapped": [
+            "migraine disorder"
+          ],
+          "variants_number": 329,
+          "weight_type": "NR",
+          "genome_build": "GRCh37",
+          "date_release": "2021-10-21",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001282/ScoringFiles/PGS001282.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001282/ScoringFiles/Harmonized/PGS001282_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001282/ScoringFiles/Harmonized/PGS001282_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS001281",
+          "name": "GBE_HC86",
+          "trait_reported": "Migraine",
+          "trait_mapped": [
+            "migraine disorder"
+          ],
+          "variants_number": 25,
+          "weight_type": "NR",
+          "genome_build": "GRCh37",
+          "date_release": "2021-10-21",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001281/ScoringFiles/PGS001281.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001281/ScoringFiles/Harmonized/PGS001281_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS001281/ScoringFiles/Harmonized/PGS001281_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "height",
+      "label": "Height",
+      "search_terms": [
+        "height",
+        "body height"
+      ],
+      "matched_terms": [
+        {
+          "term": "height",
+          "matched_trait_labels": [
+            "body height",
+            "sitting height measurement"
+          ]
+        },
+        {
+          "term": "body height",
+          "matched_trait_labels": [
+            "body height"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS002972",
+        "name": "ExPRSweb_Height_50-raw_DBSLMM_MGI_20211120",
+        "trait_reported": "Height",
+        "trait_mapped": [
+          "body height"
+        ],
+        "variants_number": 10297262,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2022-11-23",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002972/ScoringFiles/PGS002972.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002972/ScoringFiles/Harmonized/PGS002972_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002972/ScoringFiles/Harmonized/PGS002972_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS002972",
+          "name": "ExPRSweb_Height_50-raw_DBSLMM_MGI_20211120",
+          "trait_reported": "Height",
+          "trait_mapped": [
+            "body height"
+          ],
+          "variants_number": 10297262,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002972/ScoringFiles/PGS002972.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002972/ScoringFiles/Harmonized/PGS002972_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002972/ScoringFiles/Harmonized/PGS002972_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002967",
+          "name": "ExPRSweb_Height_50-irnt_DBSLMM_MGI_20211120",
+          "trait_reported": "Height",
+          "trait_mapped": [
+            "body height"
+          ],
+          "variants_number": 10297259,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002967/ScoringFiles/PGS002967.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002967/ScoringFiles/Harmonized/PGS002967_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002967/ScoringFiles/Harmonized/PGS002967_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS004780",
+          "name": "height_PRSmix_sas",
+          "trait_reported": "Height",
+          "trait_mapped": [
+            "body height"
+          ],
+          "variants_number": 5967476,
+          "weight_type": "beta",
+          "genome_build": "hg38",
+          "date_release": "2024-03-28",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004780/ScoringFiles/PGS004780.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004780/ScoringFiles/Harmonized/PGS004780_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004780/ScoringFiles/Harmonized/PGS004780_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS004781",
+          "name": "height_PRSmixPlus_eur",
+          "trait_reported": "Height",
+          "trait_mapped": [
+            "body height"
+          ],
+          "variants_number": 3220389,
+          "weight_type": "beta",
+          "genome_build": "hg38",
+          "date_release": "2024-03-28",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004781/ScoringFiles/PGS004781.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004781/ScoringFiles/Harmonized/PGS004781_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004781/ScoringFiles/Harmonized/PGS004781_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002977",
+          "name": "ExPRSweb_Height_GIANT-Yang2012-height_DBSLMM_MGI_20211120",
+          "trait_reported": "Height",
+          "trait_mapped": [
+            "body height"
+          ],
+          "variants_number": 1851736,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002977/ScoringFiles/PGS002977.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002977/ScoringFiles/Harmonized/PGS002977_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002977/ScoringFiles/Harmonized/PGS002977_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "eye-color",
+      "label": "Eye color",
+      "search_terms": [
+        "eye color",
+        "eye colour"
+      ],
+      "matched_terms": [],
+      "selected_candidate": null,
+      "candidates": []
+    },
+    {
+      "slug": "hair-color",
+      "label": "Hair color",
+      "search_terms": [
+        "hair color",
+        "hair colour"
+      ],
+      "matched_terms": [
+        {
+          "term": "hair color",
+          "matched_trait_labels": [
+            "strand of hair color"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS002330",
+        "name": "pigment_HAIR.BOLT-LMM",
+        "trait_reported": "Hair color",
+        "trait_mapped": [
+          "strand of hair color"
+        ],
+        "variants_number": 1109311,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2022-06-09",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002330/ScoringFiles/PGS002330.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002330/ScoringFiles/Harmonized/PGS002330_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002330/ScoringFiles/Harmonized/PGS002330_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS002330",
+          "name": "pigment_HAIR.BOLT-LMM",
+          "trait_reported": "Hair color",
+          "trait_mapped": [
+            "strand of hair color"
+          ],
+          "variants_number": 1109311,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-06-09",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002330/ScoringFiles/PGS002330.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002330/ScoringFiles/Harmonized/PGS002330_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002330/ScoringFiles/Harmonized/PGS002330_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS003496",
+          "name": "cont-decay-darker_hair0",
+          "trait_reported": "Hair color (natural, before greying)",
+          "trait_mapped": [
+            "strand of hair color"
+          ],
+          "variants_number": 979739,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2023-04-12",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003496/ScoringFiles/PGS003496.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003496/ScoringFiles/Harmonized/PGS003496_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS003496/ScoringFiles/Harmonized/PGS003496_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002696",
+          "name": "pigment_HAIR.SBayesR",
+          "trait_reported": "Hair color",
+          "trait_mapped": [
+            "strand of hair color"
+          ],
+          "variants_number": 924497,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-06-09",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002696/ScoringFiles/PGS002696.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002696/ScoringFiles/Harmonized/PGS002696_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002696/ScoringFiles/Harmonized/PGS002696_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002109",
+          "name": "portability-ldpred2_darker_hair0",
+          "trait_reported": "Hair color (natural, before greying)",
+          "trait_mapped": [
+            "strand of hair color"
+          ],
+          "variants_number": 393500,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-01-10",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002109/ScoringFiles/PGS002109.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002109/ScoringFiles/Harmonized/PGS002109_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002109/ScoringFiles/Harmonized/PGS002109_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002647",
+          "name": "pigment_HAIR.PolyFun-pred",
+          "trait_reported": "Hair color",
+          "trait_mapped": [
+            "strand of hair color"
+          ],
+          "variants_number": 143829,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-06-09",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002647/ScoringFiles/PGS002647.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002647/ScoringFiles/Harmonized/PGS002647_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002647/ScoringFiles/Harmonized/PGS002647_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "bmi",
+      "label": "BMI",
+      "search_terms": [
+        "body mass index",
+        "BMI"
+      ],
+      "matched_terms": [
+        {
+          "term": "body mass index",
+          "matched_trait_labels": [
+            "body mass index",
+            "overweight body mass index status"
+          ]
+        },
+        {
+          "term": "BMI",
+          "matched_trait_labels": [
+            "BMI-adjusted fasting blood glucose measurement",
+            "BMI-adjusted fasting blood insulin measurement",
+            "BMI-adjusted waist-hip ratio",
+            "body mass index",
+            "overweight body mass index status"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS002853",
+        "name": "ExPRSweb_BMI_23104-irnt_DBSLMM_MGI_20211120",
+        "trait_reported": "Body mass index (BMI)",
+        "trait_mapped": [
+          "body mass index"
+        ],
+        "variants_number": 7446664,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2022-11-23",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002853/ScoringFiles/PGS002853.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002853/ScoringFiles/Harmonized/PGS002853_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002853/ScoringFiles/Harmonized/PGS002853_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS002853",
+          "name": "ExPRSweb_BMI_23104-irnt_DBSLMM_MGI_20211120",
+          "trait_reported": "Body mass index (BMI)",
+          "trait_mapped": [
+            "body mass index"
+          ],
+          "variants_number": 7446664,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002853/ScoringFiles/PGS002853.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002853/ScoringFiles/Harmonized/PGS002853_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002853/ScoringFiles/Harmonized/PGS002853_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002858",
+          "name": "ExPRSweb_BMI_23104-raw_DBSLMM_MGI_20211120",
+          "trait_reported": "Body mass index (BMI)",
+          "trait_mapped": [
+            "body mass index"
+          ],
+          "variants_number": 7446652,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002858/ScoringFiles/PGS002858.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002858/ScoringFiles/Harmonized/PGS002858_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002858/ScoringFiles/Harmonized/PGS002858_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS002848",
+          "name": "ExPRSweb_BMI_21001-raw_DBSLMM_MGI_20211120",
+          "trait_reported": "Body mass index (BMI)",
+          "trait_mapped": [
+            "body mass index"
+          ],
+          "variants_number": 7444629,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-11-23",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002848/ScoringFiles/PGS002848.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002848/ScoringFiles/Harmonized/PGS002848_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002848/ScoringFiles/Harmonized/PGS002848_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS005279",
+          "name": "Q001_BMI_cutRSQ0.3_LD_rho0.03",
+          "trait_reported": "Body mass index (BMI)",
+          "trait_mapped": [
+            "body mass index"
+          ],
+          "variants_number": 5000812,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2025-08-06",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS005279/ScoringFiles/PGS005279.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS005279/ScoringFiles/Harmonized/PGS005279_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS005279/ScoringFiles/Harmonized/PGS005279_hmPOS_GRCh38.txt.gz"
+        },
+        {
+          "pgs_id": "PGS004735",
+          "name": "bmi_PRSmixPlus_eur",
+          "trait_reported": "Body mass index (BMI)",
+          "trait_mapped": [
+            "body mass index"
+          ],
+          "variants_number": 4536322,
+          "weight_type": "beta",
+          "genome_build": "hg38",
+          "date_release": "2024-03-28",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004735/ScoringFiles/PGS004735.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004735/ScoringFiles/Harmonized/PGS004735_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS004735/ScoringFiles/Harmonized/PGS004735_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "left-handedness",
+      "label": "Left-handedness",
+      "search_terms": [
+        "handedness",
+        "left-handedness"
+      ],
+      "matched_terms": [
+        {
+          "term": "handedness",
+          "matched_trait_labels": [
+            "functional laterality",
+            "handedness"
+          ]
+        }
+      ],
+      "selected_candidate": {
+        "pgs_id": "PGS002151",
+        "name": "portability-ldpred2_left_handed",
+        "trait_reported": "Handedness (chirality/laterality)",
+        "trait_mapped": [
+          "handedness"
+        ],
+        "variants_number": 734236,
+        "weight_type": "beta",
+        "genome_build": "GRCh37",
+        "date_release": "2022-01-10",
+        "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+        "matches_publication": true,
+        "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002151/ScoringFiles/PGS002151.txt.gz",
+        "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002151/ScoringFiles/Harmonized/PGS002151_hmPOS_GRCh37.txt.gz",
+        "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002151/ScoringFiles/Harmonized/PGS002151_hmPOS_GRCh38.txt.gz"
+      },
+      "candidates": [
+        {
+          "pgs_id": "PGS002151",
+          "name": "portability-ldpred2_left_handed",
+          "trait_reported": "Handedness (chirality/laterality)",
+          "trait_mapped": [
+            "handedness"
+          ],
+          "variants_number": 734236,
+          "weight_type": "beta",
+          "genome_build": "GRCh37",
+          "date_release": "2022-01-10",
+          "license": "PGS obtained from the Catalog should be cited appropriately, and used in accordance with any licensing restrictions set by the authors. See EBI Terms of Use (https://www.ebi.ac.uk/about/terms-of-use/) for additional details.",
+          "matches_publication": true,
+          "scoring_file": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002151/ScoringFiles/PGS002151.txt.gz",
+          "harmonized_grch37": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002151/ScoringFiles/Harmonized/PGS002151_hmPOS_GRCh37.txt.gz",
+          "harmonized_grch38": "https://ftp.ebi.ac.uk/pub/databases/spot/pgs/scores/PGS002151/ScoringFiles/Harmonized/PGS002151_hmPOS_GRCh38.txt.gz"
+        }
+      ]
+    },
+    {
+      "slug": "male-pattern-baldness",
+      "label": "Male-pattern baldness",
+      "search_terms": [
+        "male pattern baldness",
+        "alopecia"
+      ],
+      "matched_terms": [],
+      "selected_candidate": null,
+      "candidates": []
+    },
+    {
+      "slug": "severe-acne",
+      "label": "Severe acne",
+      "search_terms": [
+        "acne",
+        "severe acne"
+      ],
+      "matched_terms": [],
+      "selected_candidate": null,
+      "candidates": []
+    }
+  ]
+}

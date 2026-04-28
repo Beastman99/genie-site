@@ -1,0 +1,15 @@
+FROM python:3.13-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    GENIE_HOST=0.0.0.0 \
+    PORT=10000 \
+    GENIE_COOKIE_SECURE=1 \
+    GENIE_ENABLE_PIPELINE=0
+
+WORKDIR /app
+
+COPY . /app
+
+EXPOSE 10000
+
+CMD ["python3", "genie_server.py"]

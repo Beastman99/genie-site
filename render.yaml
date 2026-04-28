@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: genie-site
+    runtime: docker
+    plan: starter
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    disk:
+      name: genie-data
+      mountPath: /app/data
+      sizeGB: 1
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: GENIE_HOST
+        value: "0.0.0.0"
+      - key: GENIE_COOKIE_SECURE
+        value: "1"
+      - key: GENIE_DATA_DIR
+        value: "/app/data"
+      - key: GENIE_ENABLE_PIPELINE
+        value: "0"
+      - key: GENIE_PORTAL_CODE
+        sync: false

@@ -1,0 +1,1467 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Genie — Non-medical embryo trait reports</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3efe7;
+      --paper: #fbf7f0;
+      --ink: #161513;
+      --muted: #69635d;
+      --line: rgba(22, 21, 19, 0.09);
+      --soft: #ebe3d6;
+      --olive: #677463;
+      --olive-deep: #29352d;
+      --clay: #b77d63;
+      --card: #ffffff;
+      --shadow: 0 28px 80px rgba(22, 21, 19, 0.08);
+      --shadow-soft: 0 14px 34px rgba(22, 21, 19, 0.06);
+      --max: 1220px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", system-ui, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(198, 213, 203, 0.78), transparent 26%),
+        linear-gradient(180deg, #f6f2eb 0%, #f3efe7 48%, #efe9dd 100%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img, video { display: block; width: 100%; }
+    button, input, textarea { font: inherit; }
+
+    .container {
+      width: min(var(--max), calc(100% - 44px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(243, 239, 231, 0.84);
+      border-bottom: 1px solid rgba(22, 21, 19, 0.06);
+    }
+
+    .nav {
+      min-height: 86px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+    }
+
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #d6cab5, #6b7c69);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-actions { display: flex; gap: 12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-dark {
+      background: var(--ink);
+      color: #fff;
+      box-shadow: 0 16px 32px rgba(22, 21, 19, 0.16);
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.78);
+      border-color: rgba(22, 21, 19, 0.1);
+      color: var(--ink);
+    }
+
+    .hero {
+      padding: 34px 0 88px;
+    }
+
+    .hero-shell {
+      display: grid;
+      grid-template-columns: 0.94fr 1.06fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow,
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #7f796f;
+      font-weight: 800;
+    }
+
+    .eyebrow::before,
+    .kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--olive);
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      margin: 0;
+      line-height: 0.92;
+    }
+
+    h1 {
+      font-size: clamp(4.9rem, 8vw, 7.8rem);
+      margin-top: 18px;
+      max-width: 7.4ch;
+    }
+
+    .hero-copy p {
+      margin: 24px 0 0;
+      font-size: 22px;
+      line-height: 1.65;
+      color: var(--muted);
+      max-width: 24ch;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .hero-note {
+      margin-top: 18px;
+      color: #8a8378;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .storyboard {
+      display: grid;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .hero-media,
+    .signal-card,
+    .insight-panel {
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(22, 21, 19, 0.08);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-media {
+      background: #b9aea2;
+      min-height: 420px;
+    }
+
+    .hero-media img,
+    .hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .hero-media video {
+      object-position: center 18%;
+      transform: scale(1.18);
+      transform-origin: center center;
+    }
+
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(12, 12, 12, 0.06), rgba(12, 12, 12, 0.4));
+      pointer-events: none;
+    }
+
+    .hero-media-copy {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      z-index: 1;
+      color: #fff;
+    }
+
+    .hero-media-copy strong {
+      display: block;
+      font-size: 30px;
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .hero-media-copy span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 30ch;
+    }
+
+    .insight-panel {
+      padding: 22px;
+      background: linear-gradient(180deg, rgba(248, 242, 233, 0.95), rgba(236, 227, 214, 0.95));
+    }
+
+    .insight-panel .mini {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #867f75;
+      font-weight: 800;
+    }
+
+    .insight-panel h3 {
+      font-size: 32px;
+      margin-top: 10px;
+      line-height: 0.98;
+    }
+
+    .insight-panel p {
+      margin: 12px 0 0;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    .signal-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .signal-line {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .signal-line strong {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5d574f;
+    }
+
+    .signal-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(22, 21, 19, 0.08);
+      overflow: hidden;
+    }
+
+    .signal-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #7f927c, #c08c71);
+    }
+
+    .frame-overlay {
+      position: absolute;
+      inset: auto 18px 18px 18px;
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, rgba(21, 20, 18, 0.08), rgba(21, 20, 18, 0.58));
+      color: #fff;
+    }
+
+    .frame-overlay strong {
+      display: block;
+      font-size: 22px;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .frame-overlay span {
+      display: block;
+      font-size: 14px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .signal-card {
+      padding: 18px;
+      background: rgba(36, 54, 44, 0.92);
+      color: #fff;
+    }
+
+    .signal-card h3 {
+      font-size: 32px;
+      line-height: 0.96;
+    }
+
+    .signal-card p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .signal-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .signal-tags span {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 12px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-contrast {
+      background: rgba(255, 255, 255, 0.52);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    h2 {
+      font-size: clamp(3.2rem, 5vw, 5rem);
+      margin-top: 14px;
+    }
+
+    .lead {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 20px;
+      line-height: 1.7;
+      max-width: 40ch;
+    }
+
+    .traits-shell {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .traits-intro {
+      position: sticky;
+      top: 110px;
+    }
+
+    .traits-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .trait-panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 26px 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .trait-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: #6d665d;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .trait-panel-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .trait-panel h3 {
+      font-size: 42px;
+      line-height: 0.96;
+    }
+
+    .trait-panel p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 38ch;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .chips span {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #f4efe6;
+      color: #625d56;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+
+    .step {
+      background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.68));
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .step-no {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      color: #857e75;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      font-size: 34px;
+      margin-top: 14px;
+    }
+
+    .step p {
+      margin: 14px 0 0;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .steps-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-top: 24px;
+      padding: 22px 24px;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .steps-cta p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 42ch;
+    }
+
+    .sample-report {
+      margin-top: 38px;
+      background: linear-gradient(180deg, #171715 0%, #232220 100%);
+      border-radius: 38px;
+      padding: 34px;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .sample-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .sample-badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .compare-shell {
+      display: grid;
+      gap: 18px;
+      margin-top: 24px;
+    }
+
+    .compare-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .compare-card,
+    .access-side {
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .compare-card {
+      padding: 22px;
+    }
+
+    .compare-card-header {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .compare-card h3 {
+      font-size: 30px;
+    }
+
+    .embryo-chip {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 800;
+    }
+
+    .compare-stats {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .compare-stat {
+      display: grid;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255, 255, 255, 0.09);
+    }
+
+    .compare-stat-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.76);
+      font-weight: 700;
+    }
+
+    .compare-stat-head strong {
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .compare-stat-note {
+      font-size: 12px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.58);
+    }
+
+    .compare-bar {
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+
+    .compare-bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #97a891, #d9a483);
+    }
+
+    .compare-scale {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.42);
+      font-weight: 700;
+    }
+
+    .compare-prediction {
+      display: grid;
+      gap: 10px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .compare-prediction span {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.58);
+      font-weight: 800;
+    }
+
+    .compare-prediction-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .compare-eye {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 2px solid rgba(255, 255, 255, 0.22);
+      box-shadow: inset 0 0 0 4px rgba(255, 255, 255, 0.22);
+      position: relative;
+      flex: 0 0 auto;
+    }
+
+    .compare-eye::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at center, #0f0f10 0 20%, rgba(15,15,16,0.18) 21%, transparent 22%);
+    }
+
+    .compare-eye::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      top: 7px;
+      right: 8px;
+      background: rgba(255, 255, 255, 0.82);
+      filter: blur(0.3px);
+    }
+
+    .compare-eye.blue-green {
+      background: radial-gradient(circle at 35% 35%, #e0f2ef 0 18%, #71a8bf 32%, #3c6f8c 56%, #21425a 100%);
+    }
+
+    .compare-eye.hazel-mixed {
+      background: radial-gradient(circle at 35% 35%, #f2e2c2 0 18%, #9a8764 34%, #6f6048 58%, #4a3d2f 100%);
+    }
+
+    .compare-eye.brown {
+      background: radial-gradient(circle at 35% 35%, #d9b48b 0 18%, #876042 34%, #5f412b 58%, #352217 100%);
+    }
+
+    .compare-prediction strong {
+      display: block;
+      font-size: 22px;
+      line-height: 1.18;
+      letter-spacing: -0.04em;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .compare-prediction small {
+      display: block;
+      font-size: 13px;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.64);
+    }
+
+    .compare-summary {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.74);
+      line-height: 1.65;
+      font-size: 15px;
+    }
+
+    .report-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .report-stat {
+      padding: 18px;
+    }
+
+    .report-stat span {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.58);
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .report-stat strong {
+      display: block;
+      font-size: 24px;
+      letter-spacing: -0.04em;
+    }
+
+    .access-shell {
+      display: grid;
+      grid-template-columns: 0.94fr 1.06fr;
+      gap: 26px;
+    }
+
+    .access-form {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 32px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .access-form form {
+      display: grid;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #857e75;
+      font-weight: 800;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      margin-top: 8px;
+      border-radius: 18px;
+      border: 1px solid rgba(22, 21, 19, 0.1);
+      padding: 14px 16px;
+      background: #faf7f1;
+      color: var(--ink);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-status {
+      min-height: 24px;
+      margin-top: 6px;
+      color: var(--olive);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .access-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .access-side {
+      padding: 26px;
+      background: linear-gradient(180deg, rgba(36,54,44,.94), rgba(54,77,64,.94));
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .access-side h3 {
+      font-size: 38px;
+    }
+
+    .access-side p {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .process-item {
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .process-item strong {
+      display: block;
+      font-size: 14px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.58);
+      margin-bottom: 6px;
+    }
+
+    .process-item span {
+      display: block;
+      line-height: 1.6;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .access-link {
+      display: inline-flex;
+      margin-top: 18px;
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .cta-wrap { padding-bottom: 90px; }
+
+    .cta {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 42px 44px;
+      border-radius: 38px;
+      background: linear-gradient(135deg, #161513 0%, #3b332b 100%);
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .cta h2 {
+      color: #fff;
+      max-width: 12ch;
+      font-size: 56px;
+    }
+
+    .cta p {
+      margin: 16px 0 0;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 34ch;
+    }
+
+    .cta-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1100px) {
+      .hero-shell,
+      .traits-shell,
+      .access-shell,
+      .cta,
+      .sample-head,
+      .steps-cta {
+        grid-template-columns: 1fr;
+      }
+
+      .storyboard {
+        min-height: auto;
+      }
+
+      .traits-intro {
+        position: static;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .container {
+        width: min(var(--max), calc(100% - 28px));
+      }
+
+      .nav {
+        min-height: 74px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .form-row,
+      .steps,
+      .report-stats,
+      .compare-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .steps-cta {
+        display: grid;
+      }
+
+      .hero {
+        padding: 24px 0 64px;
+      }
+
+      .section {
+        padding: 78px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-mark"></div>
+        <span>Genie</span>
+      </div>
+      <div class="nav-links">
+        <a href="#traits">Traits</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="#sample-report">Sample report</a>
+        <a href="#request-access">Get started</a>
+      </div>
+      <div class="nav-actions">
+        <a href="#sample-report" class="btn btn-light">Sample report</a>
+        <a href="#request-access" class="btn btn-dark">Get started</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-shell">
+      <div class="hero-copy">
+        <div class="eyebrow">Non-medical embryo trait reporting</div>
+        <h1>The rest of your embryo's story.</h1>
+        <p>See the non-medical traits that your clinic didn't show you.</p>
+        <div class="hero-actions">
+          <a href="#request-access" class="btn btn-dark">Get started</a>
+          <a href="#sample-report" class="btn btn-light">See sample report</a>
+        </div>
+        <div class="hero-note"><span style="text-decoration:line-through; color:#9d9588;">$299</span> · Free for early families · Places remaining: 5</div>
+      </div>
+
+      <div class="storyboard">
+        <div class="hero-media">
+          <video id="hero-eye-video" autoplay muted loop playsinline preload="auto" aria-label="Blue eye animation">
+            <source src="/latest.mp4" type="video/mp4">
+          </video>
+          <div class="hero-media-copy">
+            <strong>The bigger picture.</strong>
+            <span>Mind, appearance and personality traits.</span>
+          </div>
+        </div>
+
+        <div class="signal-card">
+          <h3>Beyond the medical sheet.</h3>
+          <p>Genie adds the non-medical layer that is usually left out of the standard IVF summary.</p>
+          <div class="signal-tags">
+            <span>Mind</span>
+            <span>Appearance</span>
+            <span>Personality</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="traits" class="section section-contrast">
+    <div class="container traits-shell">
+      <div class="traits-intro">
+        <div class="kicker">Trait groups</div>
+        <h2>Three areas clinics usually leave out.</h2>
+        <p class="lead">Genie focuses on non-medical traits across mind, appearance and personality, turning the same underlying file into a broader picture than the standard clinic summary.</p>
+      </div>
+
+      <div class="traits-stack">
+        <div class="trait-panel">
+          <div class="trait-index">01</div>
+          <div class="trait-panel-head">
+            <h3>Mind</h3>
+          </div>
+          <p>Cognitive and neurodevelopmental tendencies that go beyond the purely medical screening most families are shown.</p>
+          <div class="chips">
+            <span>IQ</span>
+            <span>ADHD</span>
+            <span>Autism</span>
+            <span>OCD</span>
+            <span>Memory</span>
+            <span>Focus</span>
+          </div>
+        </div>
+
+        <div class="trait-panel">
+          <div class="trait-index">02</div>
+          <div class="trait-panel-head">
+            <h3>Appearance</h3>
+          </div>
+          <p>Visible traits and body-related tendencies like height, pigmentation and eye colour, framed as likely outcomes rather than false certainties.</p>
+          <div class="chips">
+            <span>Height</span>
+            <span>Hair</span>
+            <span>Eye colour</span>
+            <span>BMI</span>
+            <span>Acne</span>
+            <span>Pigmentation</span>
+          </div>
+        </div>
+
+        <div class="trait-panel">
+          <div class="trait-index">03</div>
+          <div class="trait-panel-head">
+            <h3>Personality</h3>
+          </div>
+          <p>Temperament-oriented tendencies that help round out the picture beyond disease risk and chromosomal status alone.</p>
+          <div class="chips">
+            <span>Extroversion</span>
+            <span>Anxiety</span>
+            <span>Depression</span>
+            <span>Risk tolerance</span>
+            <span>Novelty-seeking</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="how-it-works" class="section">
+    <div class="container">
+      <div class="kicker">How it works</div>
+      <h2>One simple first step.</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-no">01</div>
+          <h3>Sign up.</h3>
+          <p>Press the button and tell us where to reach you. That is the only step you need to take on the site.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">02</div>
+          <h3>Send the drafted email.</h3>
+          <p>We give you a ready-made note to send to your clinic or doctor asking for the existing embryo file.</p>
+        </div>
+        <div class="step">
+          <div class="step-no">03</div>
+          <h3>We take it from there.</h3>
+          <p>Once the file is available, Genie processes it and returns the non-medical trait report.</p>
+        </div>
+      </div>
+      <div class="steps-cta">
+        <p>Getting started is simple: sign up once, receive the drafted clinic email, and go from there.</p>
+        <a href="#request-access" class="btn btn-dark">Get started</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sample-report" class="section section-contrast">
+    <div class="container">
+      <div class="kicker">Sample report</div>
+      <h2>See how the report looks.</h2>
+      <p class="lead">The sample below shows how Genie compares embryos across non-medical traits that sit beyond the usual clinic-facing medical report.</p>
+
+      <div class="sample-report">
+        <div class="sample-head">
+          <div>
+            <div class="kicker" style="color:rgba(255,255,255,.46);">Preview</div>
+            <h2 id="report-heading" style="color:#fff; max-width:12ch; margin-top:10px;">Embryo comparison preview</h2>
+            <p id="report-description" class="lead" style="color:rgba(255,255,255,.72); max-width:40ch; margin-top:18px;">See two selected embryos side by side across non-medical traits, benchmarked against the general population.</p>
+          </div>
+          <div id="report-badge" class="sample-badge">2 selected</div>
+        </div>
+
+        <div id="report-stats" class="report-stats">
+          <div class="report-stat">
+            <span>Status</span>
+            <strong>Preview</strong>
+          </div>
+        </div>
+
+        <div id="compare-shell" class="compare-shell">
+          <div id="compare-cards" class="compare-cards"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="request-access" class="section">
+    <div class="container access-shell">
+      <div class="access-form">
+        <div class="kicker">Get started</div>
+        <h2>Start with your name and email.</h2>
+        <p class="lead">Sign up here and we will send you the drafted clinic email so you can request the embryo file and move forward.</p>
+
+        <form id="access-request-form">
+          <div class="form-row">
+            <label>
+              Full name
+              <input id="request-name" name="name" type="text" placeholder="Alex Morgan" required>
+            </label>
+            <label>
+              Email
+              <input id="request-email" name="email" type="email" placeholder="alex@example.com" required>
+            </label>
+          </div>
+
+          <label>
+            Clinic or lab
+            <input id="request-clinic" name="clinic" type="text" placeholder="Optional">
+          </label>
+
+          <label>
+            Notes
+            <textarea id="request-notes" name="notes" placeholder="Optional: tell us where you are in the IVF process."></textarea>
+          </label>
+
+          <button class="btn btn-dark" type="submit">Get started</button>
+          <div id="access-request-status" class="form-status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <div class="access-grid">
+        <div class="access-side">
+          <div class="kicker" style="color:rgba(255,255,255,.48);">What happens next</div>
+          <h3>Simple from your side.</h3>
+          <p>You sign up once. We send the drafted message for your clinic. From there, we help you through the file and report flow.</p>
+          <div class="process-list">
+            <div class="process-item">
+              <strong>Step one</strong>
+              <span>Sign up here with your name and email.</span>
+            </div>
+            <div class="process-item">
+              <strong>Step two</strong>
+              <span>Receive the drafted email to send to your clinic or doctor.</span>
+            </div>
+            <div class="process-item">
+              <strong>Step three</strong>
+              <span>Once the file is available, Genie handles the secure upload and report process.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="access-side" style="background: linear-gradient(180deg, #b77d63 0%, #8f5c46 100%);">
+          <div class="kicker" style="color:rgba(255,255,255,.52);">Already approved?</div>
+          <h3>Enter the private portal.</h3>
+          <p>If you already have access, use the private portal to sign in and run a file through the upload and report flow.</p>
+          <a href="/portal" class="access-link">Go to private portal</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-wrap">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <div class="kicker" style="color:rgba(255,255,255,.5);">Next step</div>
+          <h2>Start with the file your clinic already has.</h2>
+          <p>Sign up to receive the drafted clinic email and unlock the non-medical layer hidden inside the same embryo file.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="#request-access" class="btn btn-light">Get started</a>
+          <a href="#sample-report" class="btn btn-dark">See sample report</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script id="genie-report-data" type="application/json">
+{
+  "sample_id": "HG00096",
+  "product": "Genie",
+  "report_type": "trait_report",
+  "traits": [
+    {
+      "trait": "eye_color",
+      "display_name": "Eye Color",
+      "type": "single_variant_heuristic",
+      "status": "derived",
+      "source": {
+        "simple_traits_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_eye_traits.json"
+      },
+      "result_label": "blue / lighter eyes more likely",
+      "summary": "Estimated from a simple eye-color marker.",
+      "variant": {
+        "id": "rs12913832",
+        "chrom": "15",
+        "pos": "28365618",
+        "ref": "A",
+        "alt": "G",
+        "genotype": "1/1"
+      }
+    },
+    {
+      "trait": "hair-color",
+      "display_name": "Hair color",
+      "type": "polygenic_demo",
+      "result_label": "hair-colour signal computed",
+      "summary": "This result reflects a directional hair-colour signal rather than a fixed shade prediction.",
+      "coverage_note": "Based on 95 matched variants from the sample model.",
+      "sample_id": "HG00096",
+      "score": {
+        "effect_weight_sum": -18.6349,
+        "effect_weight_avg": -0.0980785,
+        "allele_ct": 190,
+        "named_allele_dosage_sum": 150.0
+      },
+      "source": {
+        "pgs_id": "PGS002647",
+        "pgs_name": "pigment_HAIR.PolyFun-pred",
+        "summary_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_hair_top100/summary.json"
+      }
+    },
+    {
+      "trait": "height",
+      "display_name": "Height",
+      "type": "polygenic_demo",
+      "result_label": "lower height-associated polygenic signal",
+      "summary": "This result reflects relative height-associated signal rather than a centimetre estimate.",
+      "coverage_note": "Based on 100 matched variants from the sample model.",
+      "sample_id": "HG00096",
+      "score": {
+        "effect_weight_sum": -0.16757,
+        "effect_weight_avg": -0.000837849,
+        "allele_ct": 200,
+        "named_allele_dosage_sum": 76.0
+      },
+      "source": {
+        "pgs_id": "PGS002977",
+        "pgs_name": "ExPRSweb_Height_GIANT-Yang2012-height_DBSLMM_MGI_20211120",
+        "summary_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_height_top100/summary.json"
+      }
+    },
+    {
+      "trait": "left-handedness",
+      "display_name": "Left-handedness",
+      "type": "polygenic_demo",
+      "result_label": "lower left-handedness-associated signal",
+      "summary": "This result reflects relative handedness-associated signal rather than a direct prediction.",
+      "coverage_note": "Based on 100 matched variants from the sample model.",
+      "sample_id": "HG00096",
+      "score": {
+        "effect_weight_sum": -0.00303775,
+        "effect_weight_avg": -1.51887e-05,
+        "allele_ct": 200,
+        "named_allele_dosage_sum": 41.0
+      },
+      "source": {
+        "pgs_id": "PGS002151",
+        "pgs_name": "portability-ldpred2_left_handed",
+        "summary_file": "/Users/benjamineastman/Documents/genie/better genie/genie_pipeline/output_public_hg00096_left_top100/summary.json"
+      }
+    }
+  ]
+}
+  </script>
+  <script id="genie-comparison-data" type="application/json">
+{
+  "embryos": [
+    {
+      "id": "Embryo A",
+      "status": "Selected",
+      "summary": "Stronger overall academic and appearance profile in this preview, with lower likelihood of elevated anxiety.",
+      "traits": {
+        "intelligence": { "label": "Predicted cognitive score", "value": "Higher than average", "score": 78, "note": "78th percentile vs general population" },
+        "eye_color": { "label": "Eye colour", "value": "Blue or green most likely", "detail": "Most likely visible eye-colour category.", "icon": "blue-green" },
+        "height": { "label": "Likely adult height", "value": "176-182 cm", "detail": "Estimated adult-height band shown as a predicted outcome, not a head-to-head score." },
+        "anxiety": { "label": "Likelihood of anxiety", "value": "Lower than average", "score": 28, "note": "28th percentile vs general population" }
+      }
+    },
+    {
+      "id": "Embryo B",
+      "status": "Selected",
+      "summary": "More balanced overall profile in this preview, with moderate appearance traits and slightly higher anxiety risk.",
+      "traits": {
+        "intelligence": { "label": "Predicted cognitive score", "value": "Above average", "score": 64, "note": "64th percentile vs general population" },
+        "eye_color": { "label": "Eye colour", "value": "Hazel or mixed most likely", "detail": "Most likely visible eye-colour category.", "icon": "hazel-mixed" },
+        "height": { "label": "Likely adult height", "value": "171-178 cm", "detail": "Estimated adult-height band shown as a predicted outcome, not a head-to-head score." },
+        "anxiety": { "label": "Likelihood of anxiety", "value": "Around average", "score": 44, "note": "44th percentile vs general population" }
+      }
+    },
+    {
+      "id": "Embryo C",
+      "status": "Available",
+      "summary": "More neutral cognitive profile in this preview, with darker-eye odds and a slightly shorter adult height expectation.",
+      "traits": {
+        "intelligence": { "label": "Predicted cognitive score", "value": "Slightly above average", "score": 58, "note": "58th percentile vs general population" },
+        "eye_color": { "label": "Eye colour", "value": "Brown most likely", "detail": "Most likely visible eye-colour category.", "icon": "brown" },
+        "height": { "label": "Likely adult height", "value": "166-173 cm", "detail": "Estimated adult-height band shown as a predicted outcome, not a head-to-head score." },
+        "anxiety": { "label": "Likelihood of anxiety", "value": "Around average", "score": 49, "note": "49th percentile vs general population" }
+      }
+    }
+  ],
+  "selected_embryos": ["Embryo A", "Embryo B"]
+}
+  </script>
+  <script>
+    const embeddedReportData = JSON.parse(document.getElementById("genie-report-data").textContent);
+    const comparisonData = JSON.parse(document.getElementById("genie-comparison-data").textContent);
+    const accessRequestForm = document.getElementById("access-request-form");
+    const accessRequestStatus = document.getElementById("access-request-status");
+    const compareCards = document.getElementById("compare-cards");
+    const reportBadge = document.getElementById("report-badge");
+    const heroEyeVideo = document.getElementById("hero-eye-video");
+
+    function methodLabel(trait) {
+      return trait.type === "single_variant_heuristic" ? "single marker heuristic" : "polygenic model";
+    }
+
+    function traitCategory(trait) {
+      const key = trait.trait.toLowerCase();
+      if (["height", "hair-color", "eye_color"].includes(key)) return "Appearance";
+      if (["left-handedness"].includes(key)) return "Personality";
+      return "Mind";
+    }
+
+    function renderReport(data) {
+      const polygenicCount = data.traits.filter((trait) => trait.type === "polygenic_demo").length;
+      document.getElementById("report-stats").innerHTML = [
+        { label: "Embryos shown", value: "2" },
+        { label: "Traits compared", value: String(Object.keys(comparisonData.embryos[0].traits).length) },
+        { label: "Preview mode", value: "Side by side" }
+      ].map((item) => '<div class="report-stat"><span>' + item.label + '</span><strong>' + item.value + '</strong></div>').join("");
+    }
+
+    function renderCompareView() {
+      const selected = comparisonData.embryos.filter((embryo) => comparisonData.selected_embryos.includes(embryo.id));
+      compareCards.innerHTML = selected.map((embryo) => {
+        const importantTraits = ["intelligence", "eye_color", "height", "anxiety"];
+        return '<div class="compare-card">' +
+          '<div class="compare-card-header">' +
+            '<div><h3>' + embryo.id + '</h3><div class="compare-summary">' + embryo.summary + '</div></div>' +
+            '<div class="embryo-chip">' + embryo.status + '</div>' +
+          '</div>' +
+          '<div class="compare-stats">' +
+            importantTraits.map((key) => {
+              const trait = embryo.traits[key];
+              if (key === "eye_color" || key === "height") {
+                return '<div class="compare-prediction">' +
+                  '<div class="compare-prediction-head"><span>' + trait.label + '</span>' + (key === "eye_color" ? '<div class="compare-eye ' + trait.icon + '"></div>' : '') + '</div>' +
+                  '<strong>' + trait.value + '</strong>' +
+                  '<small>' + trait.detail + '</small>' +
+                '</div>';
+              }
+              return '<div class="compare-stat">' +
+                '<div class="compare-stat-head"><span>' + trait.label + '</span><strong>' + trait.value + '</strong></div>' +
+                '<div class="compare-stat-note">' + trait.note + '</div>' +
+                '<div class="compare-bar"><span style="width:' + trait.score + '%"></span></div>' +
+                '<div class="compare-scale"><span>Lower</span><span>Average</span><span>Higher</span></div>' +
+              '</div>';
+            }).join('') +
+          '</div>' +
+        '</div>';
+      }).join('');
+      compareCards.style.display = "grid";
+      reportBadge.textContent = selected.length + " selected";
+      document.getElementById("report-heading").textContent = "Embryos compared side by side";
+      document.getElementById("report-description").textContent = "A private report can compare selected embryos side by side across non-medical traits, benchmarked against the general population.";
+    }
+
+    async function fetchSampleReport() {
+      try {
+        const response = await fetch("/api/sample-report");
+        if (!response.ok) throw new Error("Sample report unavailable.");
+        renderReport(await response.json());
+      } catch (error) {
+        renderReport(embeddedReportData);
+      }
+    }
+
+    accessRequestForm.addEventListener("submit", async function (event) {
+      event.preventDefault();
+      try {
+        accessRequestStatus.textContent = "Saving your details.";
+        const response = await fetch("/api/access-request", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: document.getElementById("request-name").value.trim(),
+            email: document.getElementById("request-email").value.trim(),
+            clinic: document.getElementById("request-clinic").value.trim(),
+            notes: document.getElementById("request-notes").value.trim()
+          })
+        });
+        const payload = await response.json();
+        if (!response.ok) throw new Error(payload.error || "Could not save access request.");
+        accessRequestStatus.textContent = "You're on the list. We will send the drafted clinic email and next steps shortly.";
+        accessRequestForm.reset();
+      } catch (error) {
+        accessRequestStatus.textContent = error.message;
+      }
+    });
+
+    if (heroEyeVideo) {
+      heroEyeVideo.playbackRate = 1.12;
+    }
+
+    fetchSampleReport();
+    renderCompareView();
+  </script>
+</body>
+</html>

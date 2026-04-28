@@ -1,0 +1,17 @@
+*
+
+!.dockerignore
+!Dockerfile
+!DEPLOY.md
+!README.md
+!render.yaml
+!genie_server.py
+!genie-landing.html
+!genie-portal.html
+!latest.mp4
+!sample-report.json
+
+!genie_pipeline/
+genie_pipeline/*
+!genie_pipeline/*.py
+!genie_pipeline/*.json
