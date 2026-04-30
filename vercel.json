@@ -4,11 +4,11 @@
   "rewrites": [
     {
       "source": "/",
-      "destination": "/genie-landing.html"
+      "destination": "/genie-landing"
     },
     {
       "source": "/portal",
-      "destination": "/genie-portal.html"
+      "destination": "/genie-portal"
     }
   ]
 }
