@@ -86,25 +86,18 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Private access</div>
-          <h1>Secure upload and report generation.</h1>
-          <p>This portal is intentionally deeper in the product flow. Only approved users with an access code can open the uploader and run the embryo report pipeline.</p>
+          <h1>Private portal preview.</h1>
+          <p>This static public deployment shows the private portal experience and sample report structure. Live uploads are not enabled on this version of the site.</p>
         </div>
         <div id="gate-panel" class="gate-panel">
-          <div class="eyebrow">Enter portal</div>
-          <h2 style="font-size:44px; margin-top:10px;">Unlock private access</h2>
-          <p class="helper" style="margin-top:16px;">Use the access code shared after signup approval. The landing page does not expose the uploader.</p>
-          <form id="login-form" style="margin-top:22px;">
-            <label>
-              Access code
-              <input id="access-code" type="password" placeholder="Enter private code" required>
-            </label>
-            <button class="btn btn-primary" type="submit" style="margin-top:16px;">Enter portal</button>
-            <div id="login-status" class="form-status" aria-live="polite"></div>
-          </form>
+          <div class="eyebrow">Portal access</div>
+          <h2 style="font-size:44px; margin-top:10px;">Live uploads are not enabled here</h2>
+          <p class="helper" style="margin-top:16px;">This page stays public as a preview of the private portal. The real upload flow can be connected later when the production genomics pipeline is ready.</p>
+          <div id="login-status" class="form-status" aria-live="polite">Sample portal preview only.</div>
         </div>
       </div>
 
-      <div id="portal-app" class="hidden">
+      <div id="portal-app">
         <div class="portal-grid">
           <div class="panel">
             <div class="eyebrow">Upload runner</div>
@@ -236,12 +229,9 @@
     const embeddedReportData = JSON.parse(document.getElementById("genie-report-data").textContent);
     const gatePanel = document.getElementById("gate-panel");
     const portalApp = document.getElementById("portal-app");
-    const loginForm = document.getElementById("login-form");
     const loginStatus = document.getElementById("login-status");
     const runForm = document.getElementById("run-form");
     const runFormStatus = document.getElementById("run-form-status");
-    let pipelineEnabled = true;
-    let activeJobId = null;
 
     function methodLabel(trait) {
       return trait.type === "single_variant_heuristic" ? "single marker heuristic" : "polygenic demo";
@@ -284,117 +274,23 @@
       document.getElementById("status-traits").textContent = "Traits rendered: " + data.traits.length;
     }
 
-    function selectedTraits() {
-      return Array.from(document.querySelectorAll('input[name="trait"]:checked')).map((input) => input.value);
-    }
-
     function setRunStatus(message) {
       runFormStatus.textContent = message;
     }
 
-    function updateJobFacts(job) {
-      document.getElementById("status-job").textContent = "Job: " + job.status;
-      if (job.report_path) {
-        document.getElementById("report-download-link").href = "/api/reports/" + job.job_id;
-      }
-    }
-
-    async function pollJob(jobId) {
-      activeJobId = jobId;
-      while (activeJobId === jobId) {
-        const response = await fetch("/api/jobs/" + jobId);
-        const job = await response.json();
-        updateJobFacts(job);
-        setRunStatus(job.message || job.status);
-        if (job.status === "completed" && job.report) {
-          renderReport(job.report);
-          setRunStatus("Report ready.");
-          return;
-        }
-        if (job.status === "failed") {
-          setRunStatus("Run failed: " + (job.error && job.error.detail ? job.error.detail : "unknown error"));
-          return;
-        }
-        await new Promise((resolve) => window.setTimeout(resolve, 2000));
-      }
-    }
-
-    async function syncSession() {
-      const [sessionResponse, configResponse] = await Promise.all([
-        fetch("/api/session"),
-        fetch("/api/config")
-      ]);
-      const session = await sessionResponse.json();
-      const config = await configResponse.json();
-      pipelineEnabled = config.pipeline_enabled !== false;
-      if (session.authorized) {
-        gatePanel.classList.add("hidden");
-        portalApp.classList.remove("hidden");
-        if (!pipelineEnabled) {
-          runForm.classList.add("hidden");
-          setRunStatus("Uploads are not enabled on this live deployment yet.");
-        } else {
-          runForm.classList.remove("hidden");
-        }
-      } else {
-        gatePanel.classList.remove("hidden");
-        portalApp.classList.add("hidden");
-      }
-    }
-
-    loginForm.addEventListener("submit", async function (event) {
-      event.preventDefault();
-      loginStatus.textContent = "Checking access code.";
-      const response = await fetch("/api/portal-login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ access_code: document.getElementById("access-code").value.trim() })
-      });
-      const payload = await response.json();
-      if (!response.ok) {
-        loginStatus.textContent = payload.error || "Could not enter portal.";
-        return;
-      }
-      loginStatus.textContent = "Access granted.";
-      await syncSession();
-    });
-
     runForm.addEventListener("submit", async function (event) {
       event.preventDefault();
-      if (!pipelineEnabled) {
-        setRunStatus("Uploads are not enabled on this live deployment yet.");
-        return;
-      }
-      const fileInput = document.getElementById("run-vcf-file");
-      const traits = selectedTraits();
-      if (!fileInput.files.length) {
-        setRunStatus("Choose a .vcf or .vcf.gz file.");
-        return;
-      }
-      if (!traits.length) {
-        setRunStatus("Select at least one trait.");
-        return;
-      }
-      const formData = new FormData();
-      formData.append("sample_name", document.getElementById("run-sample-name").value.trim());
-      formData.append("genome_build", document.getElementById("run-genome-build").value.trim() || "GRCh37");
-      formData.append("vcf_file", fileInput.files[0]);
-      formData.append("traits", traits.join(","));
-      setRunStatus("Uploading file and creating job.");
-      const response = await fetch("/api/jobs", { method: "POST", body: formData });
-      const payload = await response.json();
-      if (!response.ok) {
-        setRunStatus(payload.error || "Could not start run.");
-        return;
-      }
-      document.getElementById("status-job").textContent = "Job: " + payload.job_id;
-      setRunStatus("Job created. Running pipeline.");
-      pollJob(payload.job_id);
+      setRunStatus("Uploads are not enabled on this public static deployment.");
     });
 
     renderReport(embeddedReportData);
-    fetch("/api/sample-report").then((response) => response.json()).then(renderReport).catch(() => {});
-    syncSession();
+    fetch("/sample-report.json").then((response) => response.json()).then(renderReport).catch(() => {});
+    gatePanel.classList.remove("hidden");
+    portalApp.classList.remove("hidden");
+    runForm.classList.add("hidden");
+    loginStatus.textContent = "Sample portal preview only.";
+    setRunStatus("Uploads are not enabled on this public static deployment.");
+    document.getElementById("status-job").textContent = "Job: sample preview";
   </script>
 </body>
 </html>

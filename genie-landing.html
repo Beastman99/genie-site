@@ -1155,7 +1155,7 @@
       <div class="access-form">
         <div class="kicker">Get started</div>
         <h2>Start with your name and email.</h2>
-        <p class="lead">Sign up here and we will send you the drafted clinic email so you can request the embryo file and move forward.</p>
+        <p class="lead">Fill this in and Genie will draft the clinic email you can use to request the embryo file and move forward.</p>
 
         <form id="access-request-form">
           <div class="form-row">
@@ -1179,7 +1179,7 @@
             <textarea id="request-notes" name="notes" placeholder="Optional: tell us where you are in the IVF process."></textarea>
           </label>
 
-          <button class="btn btn-dark" type="submit">Get started</button>
+          <button class="btn btn-dark" type="submit">Draft my clinic email</button>
           <div id="access-request-status" class="form-status" aria-live="polite"></div>
         </form>
       </div>
@@ -1188,19 +1188,19 @@
         <div class="access-side">
           <div class="kicker" style="color:rgba(255,255,255,.48);">What happens next</div>
           <h3>Simple from your side.</h3>
-          <p>You sign up once. We send the drafted message for your clinic. From there, we help you through the file and report flow.</p>
+          <p>You fill this in once. Genie drafts the message for your clinic. From there, you can request the file and move forward.</p>
           <div class="process-list">
             <div class="process-item">
               <strong>Step one</strong>
-              <span>Sign up here with your name and email.</span>
+              <span>Fill this in with your name and email.</span>
             </div>
             <div class="process-item">
               <strong>Step two</strong>
-              <span>Receive the drafted email to send to your clinic or doctor.</span>
+              <span>Get the drafted email to send to your clinic or doctor.</span>
             </div>
             <div class="process-item">
               <strong>Step three</strong>
-              <span>Once the file is available, Genie handles the secure upload and report process.</span>
+              <span>Once the file is available, Genie can handle the secure upload and report process.</span>
             </div>
           </div>
         </div>
@@ -1425,7 +1425,7 @@
 
     async function fetchSampleReport() {
       try {
-        const response = await fetch("/api/sample-report");
+        const response = await fetch("/sample-report.json");
         if (!response.ok) throw new Error("Sample report unavailable.");
         renderReport(await response.json());
       } catch (error) {
@@ -1433,27 +1433,43 @@
       }
     }
 
-    accessRequestForm.addEventListener("submit", async function (event) {
+    function buildClinicEmail(fields) {
+      const clinicLine = fields.clinic ? " at " + fields.clinic : "";
+      return [
+        "Subject: Request for embryo genomic file",
+        "",
+        "Hello,",
+        "",
+        "I am writing to request a copy of the embryo genomic file from my IVF testing" + clinicLine + ".",
+        "",
+        "If possible, please share the raw embryo genomic data file that was generated during testing, along with any file format notes needed to interpret it.",
+        "",
+        "Please let me know if you need any further consent or identification from me to release the file.",
+        "",
+        "Thank you,",
+        fields.name || ""
+      ].join("\n");
+    }
+
+    accessRequestForm.addEventListener("submit", function (event) {
       event.preventDefault();
-      try {
-        accessRequestStatus.textContent = "Saving your details.";
-        const response = await fetch("/api/access-request", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            name: document.getElementById("request-name").value.trim(),
-            email: document.getElementById("request-email").value.trim(),
-            clinic: document.getElementById("request-clinic").value.trim(),
-            notes: document.getElementById("request-notes").value.trim()
-          })
-        });
-        const payload = await response.json();
-        if (!response.ok) throw new Error(payload.error || "Could not save access request.");
-        accessRequestStatus.textContent = "You're on the list. We will send the drafted clinic email and next steps shortly.";
-        accessRequestForm.reset();
-      } catch (error) {
-        accessRequestStatus.textContent = error.message;
-      }
+      const fields = {
+        name: document.getElementById("request-name").value.trim(),
+        email: document.getElementById("request-email").value.trim(),
+        clinic: document.getElementById("request-clinic").value.trim(),
+        notes: document.getElementById("request-notes").value.trim()
+      };
+      const emailDraft = buildClinicEmail(fields);
+      const blob = new Blob([emailDraft], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "genie-clinic-request-email.txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      accessRequestStatus.textContent = "Draft ready. A clinic email template has been downloaded for you.";
     });
 
     if (heroEyeVideo) {

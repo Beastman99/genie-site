@@ -1,103 +1,62 @@
 # Deploy Genie Live
 
-This repo is now set up for a first live deploy of the public site and private portal shell.
-
-## What this deploy includes
+This repo is now set up for a static Vercel deploy of:
 
 - public landing page
-- private portal login
-- access-request collection
 - sample report preview
+- static private portal preview page
 
-## What this deploy does not include yet
+## What this static deploy includes
 
-The live deploy is configured with uploads disabled:
+- `/` serves the public landing page
+- `/portal` serves a static preview of the private portal
+- `sample-report.json` is served as a plain static asset
+- the public form now generates a drafted clinic-email template in-browser
 
-- `GENIE_ENABLE_PIPELINE=0`
+## What this static deploy does not include
 
-That is intentional. The current public deployment path is for the website itself. The full genomics pipeline still needs heavier runtime dependencies and a more deliberate production setup before it should accept real uploads on the internet.
+- no live backend
+- no access-request database
+- no real portal authentication
+- no file uploads
+- no genomics pipeline execution on the public URL
 
-When uploads are disabled, the portal stays visible but clearly says that uploads are not enabled on that deployment.
+That is intentional. This is the cheapest clean path to getting a real public website link live now.
 
-## Files added for deployment
+## Files used by the Vercel deploy
 
-- `Dockerfile`
-- `.dockerignore`
-- `render.yaml`
+- `vercel.json`
+- `genie-landing.html`
+- `genie-portal.html`
+- `sample-report.json`
+- `latest.mp4`
 
-## Recommended host
+## Deploy on Vercel
 
-Use Render with the included Blueprint:
+1. Push the repo to GitHub.
+2. In Vercel, create a new project from that GitHub repository.
+3. Vercel will detect this as a static project automatically.
+4. Deploy.
 
-- docs: https://render.com/docs/web-services
-- docs: https://render.com/docs/docker
-- docs: https://render.com/docs/blueprint-spec
-- docs: https://render.com/docs/disks
+The included `vercel.json` rewrites:
 
-## Before you deploy
+- `/` -> `genie-landing.html`
+- `/portal` -> `genie-portal.html`
 
-This folder is not currently a git repository. Make it one and push it to GitHub first:
+## Public URL
 
-```bash
-cd "/Users/benjamineastman/Documents/genie/better genie"
-git init
-git add .
-git commit -m "Prepare Genie site for live deployment"
-git branch -M main
-git remote add origin <your-github-repo-url>
-git push -u origin main
-```
+After deploy, Vercel will give you a URL like:
 
-## Deploy on Render
+- `https://genie-site.vercel.app`
 
-1. Create a new GitHub repository and push this folder.
-2. In Render, create a new Blueprint and point it at that repository.
-3. Render will detect `render.yaml`.
-4. Set a real `GENIE_PORTAL_CODE` value when prompted.
-5. Deploy.
+You can attach a custom domain after that inside the Vercel project settings.
 
-The Blueprint will create:
+## Going from website-live to full-product-live later
 
-- one Docker web service
-- one persistent disk mounted at `/app/data`
+When you want real uploads and report generation, you will need to move back to an app host or serverless/backend setup with:
 
-## Important environment variables
-
-- `GENIE_PORTAL_CODE`
-  - required for private portal entry
-- `GENIE_ENABLE_PIPELINE`
-  - `0` for public-site-only deploy
-  - `1` only after the full upload pipeline is production-ready
-- `GENIE_DATA_DIR`
-  - where access requests and job data are stored
-- `GENIE_COOKIE_SECURE`
-  - should stay `1` on HTTPS production
-
-## Health check
-
-The app now exposes:
-
-- `/healthz`
-
-Example response:
-
-```json
-{
-  "ok": true,
-  "pipeline_enabled": false,
-  "data_dir": "/app/data"
-}
-```
-
-## Going from website-live to full-product-live
-
-To enable real uploads later, you will need at minimum:
-
-1. Linux-compatible `bcftools` / `tabix`
-2. Linux-compatible `plink2`
-3. job runtime and timeout strategy for longer scoring runs
-4. stronger auth than one shared access code
-5. a real persistent datastore for requests, jobs, and users
-6. privacy/security review before accepting reproductive genomics uploads publicly
-
-Do not flip `GENIE_ENABLE_PIPELINE=1` on the public deployment until those pieces are in place.
+1. a real backend
+2. persistent storage
+3. auth
+4. Linux-compatible genomics dependencies
+5. privacy/security review before accepting reproductive genomics uploads publicly

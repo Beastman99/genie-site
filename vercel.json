@@ -1,0 +1,14 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/genie-landing.html"
+    },
+    {
+      "source": "/portal",
+      "destination": "/genie-portal.html"
+    }
+  ]
+}
