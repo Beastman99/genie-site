@@ -624,12 +624,6 @@
       color: rgba(255, 255, 255, 0.96);
     }
 
-    .compare-stat-note {
-      font-size: 12px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.58);
-    }
-
     .compare-bar {
       height: 10px;
       border-radius: 999px;
@@ -729,18 +723,19 @@
       color: rgba(255, 255, 255, 0.96);
     }
 
-    .compare-prediction small {
-      display: block;
-      font-size: 13px;
-      line-height: 1.5;
-      color: rgba(255, 255, 255, 0.64);
-    }
-
     .compare-summary {
       margin-top: 14px;
       color: rgba(255, 255, 255, 0.74);
       line-height: 1.65;
       font-size: 15px;
+    }
+
+    .compare-disclaimer {
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 13px;
+      line-height: 1.6;
+      max-width: 72ch;
     }
 
     .report-stats {
@@ -776,6 +771,11 @@
       gap: 26px;
     }
 
+    .access-stack {
+      display: grid;
+      gap: 20px;
+    }
+
     .access-form {
       background: var(--card);
       border: 1px solid var(--line);
@@ -788,6 +788,29 @@
       display: grid;
       gap: 14px;
       margin-top: 24px;
+    }
+
+    .update-form {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .update-form form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      align-items: end;
+      margin-top: 18px;
+    }
+
+    .update-form p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 16px;
     }
 
     label {
@@ -957,7 +980,8 @@
       .form-row,
       .steps,
       .report-stats,
-      .compare-cards {
+      .compare-cards,
+      .update-form form {
         grid-template-columns: 1fr;
       }
 
@@ -1046,7 +1070,7 @@
           <div class="trait-panel-head">
             <h3>Mind</h3>
           </div>
-          <p>Cognitive and neurodevelopmental tendencies that go beyond the purely medical screening most families are shown.</p>
+          <p>Cognitive and neurodevelopmental tendencies beyond the purely medical screening.</p>
           <div class="chips">
             <span>IQ</span>
             <span>ADHD</span>
@@ -1062,7 +1086,7 @@
           <div class="trait-panel-head">
             <h3>Appearance</h3>
           </div>
-          <p>Visible traits and body-related tendencies like height, pigmentation and eye colour, framed as likely outcomes rather than false certainties.</p>
+          <p>Likely outcome of visible traits and body-related tendencies.</p>
           <div class="chips">
             <span>Height</span>
             <span>Hair</span>
@@ -1078,7 +1102,7 @@
           <div class="trait-panel-head">
             <h3>Personality</h3>
           </div>
-          <p>Temperament-oriented tendencies that help round out the picture beyond disease risk and chromosomal status alone.</p>
+          <p>Temperament-oriented tendencies beyond disease risk and chromosomal status.</p>
           <div class="chips">
             <span>Extroversion</span>
             <span>Anxiety</span>
@@ -1145,6 +1169,7 @@
 
         <div id="compare-shell" class="compare-shell">
           <div id="compare-cards" class="compare-cards"></div>
+          <div class="compare-disclaimer">Comparative scores above are shown relative to the general population and are shown as likely outcomes, not certainties.</div>
         </div>
       </div>
     </div>
@@ -1152,36 +1177,52 @@
 
   <section id="request-access" class="section">
     <div class="container access-shell">
-      <div class="access-form">
-        <div class="kicker">Get started</div>
-        <h2>Start with your name and email.</h2>
-        <p class="lead">Fill this in and Genie will draft the clinic email you can use to request the embryo file and move forward.</p>
+      <div class="access-stack">
+        <div class="access-form">
+          <div class="kicker">Get started</div>
+          <h2>Start with your name and email.</h2>
+          <p class="lead">Fill this in and Genie will draft the clinic email you can use to request the embryo file and move forward.</p>
 
-        <form id="access-request-form">
-          <div class="form-row">
+          <form id="access-request-form">
+            <div class="form-row">
+              <label>
+                Full name
+                <input id="request-name" name="name" type="text" placeholder="Alex Morgan" required>
+              </label>
+              <label>
+                Email
+                <input id="request-email" name="email" type="email" placeholder="alex@example.com" required>
+              </label>
+            </div>
+
             <label>
-              Full name
-              <input id="request-name" name="name" type="text" placeholder="Alex Morgan" required>
+              Clinic or lab
+              <input id="request-clinic" name="clinic" type="text" placeholder="Optional">
             </label>
+
+            <label>
+              Notes
+              <textarea id="request-notes" name="notes" placeholder="Optional: tell us where you are in the IVF process."></textarea>
+            </label>
+
+            <button class="btn btn-dark" type="submit">Draft my clinic email</button>
+            <div id="access-request-status" class="form-status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <div class="update-form">
+          <div class="kicker">Stay updated</div>
+          <h3 style="font-size:36px; margin-top:8px;">Not ready to start yet?</h3>
+          <p>Leave just your email and Genie will prepare a simple reminder you can keep for later.</p>
+          <form id="updates-form">
             <label>
               Email
-              <input id="request-email" name="email" type="email" placeholder="alex@example.com" required>
+              <input id="updates-email" name="email" type="email" placeholder="alex@example.com" required>
             </label>
-          </div>
-
-          <label>
-            Clinic or lab
-            <input id="request-clinic" name="clinic" type="text" placeholder="Optional">
-          </label>
-
-          <label>
-            Notes
-            <textarea id="request-notes" name="notes" placeholder="Optional: tell us where you are in the IVF process."></textarea>
-          </label>
-
-          <button class="btn btn-dark" type="submit">Draft my clinic email</button>
-          <div id="access-request-status" class="form-status" aria-live="polite"></div>
-        </form>
+            <button class="btn btn-light" type="submit">Notify me</button>
+          </form>
+          <div id="updates-status" class="form-status" aria-live="polite"></div>
+        </div>
       </div>
 
       <div class="access-grid">
@@ -1328,7 +1369,7 @@
       "summary": "Stronger overall academic and appearance profile in this preview, with lower likelihood of elevated anxiety.",
       "traits": {
         "intelligence": { "label": "Predicted cognitive score", "value": "Higher than average", "score": 78, "note": "78th percentile vs general population" },
-        "eye_color": { "label": "Eye colour", "value": "Blue or green most likely", "detail": "Most likely visible eye-colour category.", "icon": "blue-green" },
+        "eye_color": { "label": "Eye colour", "value": "Blue or green eyes", "detail": "Likely visible eye-colour category.", "icon": "blue-green" },
         "height": { "label": "Likely adult height", "value": "176-182 cm", "detail": "Estimated adult-height band shown as a predicted outcome, not a head-to-head score." },
         "anxiety": { "label": "Likelihood of anxiety", "value": "Lower than average", "score": 28, "note": "28th percentile vs general population" }
       }
@@ -1339,7 +1380,7 @@
       "summary": "More balanced overall profile in this preview, with moderate appearance traits and slightly higher anxiety risk.",
       "traits": {
         "intelligence": { "label": "Predicted cognitive score", "value": "Above average", "score": 64, "note": "64th percentile vs general population" },
-        "eye_color": { "label": "Eye colour", "value": "Hazel or mixed most likely", "detail": "Most likely visible eye-colour category.", "icon": "hazel-mixed" },
+        "eye_color": { "label": "Eye colour", "value": "Hazel or mixed eyes", "detail": "Likely visible eye-colour category.", "icon": "hazel-mixed" },
         "height": { "label": "Likely adult height", "value": "171-178 cm", "detail": "Estimated adult-height band shown as a predicted outcome, not a head-to-head score." },
         "anxiety": { "label": "Likelihood of anxiety", "value": "Around average", "score": 44, "note": "44th percentile vs general population" }
       }
@@ -1350,7 +1391,7 @@
       "summary": "More neutral cognitive profile in this preview, with darker-eye odds and a slightly shorter adult height expectation.",
       "traits": {
         "intelligence": { "label": "Predicted cognitive score", "value": "Slightly above average", "score": 58, "note": "58th percentile vs general population" },
-        "eye_color": { "label": "Eye colour", "value": "Brown most likely", "detail": "Most likely visible eye-colour category.", "icon": "brown" },
+        "eye_color": { "label": "Eye colour", "value": "Brown eyes", "detail": "Likely visible eye-colour category.", "icon": "brown" },
         "height": { "label": "Likely adult height", "value": "166-173 cm", "detail": "Estimated adult-height band shown as a predicted outcome, not a head-to-head score." },
         "anxiety": { "label": "Likelihood of anxiety", "value": "Around average", "score": 49, "note": "49th percentile vs general population" }
       }
@@ -1364,6 +1405,8 @@
     const comparisonData = JSON.parse(document.getElementById("genie-comparison-data").textContent);
     const accessRequestForm = document.getElementById("access-request-form");
     const accessRequestStatus = document.getElementById("access-request-status");
+    const updatesForm = document.getElementById("updates-form");
+    const updatesStatus = document.getElementById("updates-status");
     const compareCards = document.getElementById("compare-cards");
     const reportBadge = document.getElementById("report-badge");
     const heroEyeVideo = document.getElementById("hero-eye-video");
@@ -1404,12 +1447,10 @@
                 return '<div class="compare-prediction">' +
                   '<div class="compare-prediction-head"><span>' + trait.label + '</span>' + (key === "eye_color" ? '<div class="compare-eye ' + trait.icon + '"></div>' : '') + '</div>' +
                   '<strong>' + trait.value + '</strong>' +
-                  '<small>' + trait.detail + '</small>' +
                 '</div>';
               }
               return '<div class="compare-stat">' +
                 '<div class="compare-stat-head"><span>' + trait.label + '</span><strong>' + trait.value + '</strong></div>' +
-                '<div class="compare-stat-note">' + trait.note + '</div>' +
                 '<div class="compare-bar"><span style="width:' + trait.score + '%"></span></div>' +
                 '<div class="compare-scale"><span>Lower</span><span>Average</span><span>Higher</span></div>' +
               '</div>';
@@ -1451,6 +1492,20 @@
       ].join("\n");
     }
 
+    function buildUpdatesNote(email) {
+      return [
+        "Subject: Genie updates",
+        "",
+        "Email:",
+        email,
+        "",
+        "Interest:",
+        "Please keep me updated as Genie opens to more families.",
+        "",
+        "Saved from the public Genie site."
+      ].join("\n");
+    }
+
     accessRequestForm.addEventListener("submit", function (event) {
       event.preventDefault();
       const fields = {
@@ -1470,6 +1525,22 @@
       link.remove();
       URL.revokeObjectURL(url);
       accessRequestStatus.textContent = "Draft ready. A clinic email template has been downloaded for you.";
+    });
+
+    updatesForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const email = document.getElementById("updates-email").value.trim();
+      const note = buildUpdatesNote(email);
+      const blob = new Blob([note], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "genie-updates-note.txt";
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+      updatesStatus.textContent = "Saved. Your reminder has been downloaded for later.";
     });
 
     if (heroEyeVideo) {
