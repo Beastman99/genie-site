@@ -968,13 +968,66 @@
         width: min(var(--max), calc(100% - 28px));
       }
 
+      .topbar {
+        position: static;
+        backdrop-filter: none;
+        background: transparent;
+        border-bottom: 0;
+      }
+
       .nav {
-        min-height: 74px;
-        flex-wrap: wrap;
+        min-height: 72px;
+        gap: 16px;
       }
 
       .nav-links {
         display: none;
+      }
+
+      .nav-actions {
+        display: none;
+      }
+
+      .brand {
+        font-size: 24px;
+      }
+
+      .brand-mark {
+        width: 32px;
+        height: 32px;
+        border-radius: 11px;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 0.16em;
+        gap: 8px;
+      }
+
+      h1 {
+        font-size: clamp(4rem, 18vw, 5.6rem);
+        max-width: 6.4ch;
+      }
+
+      .hero-copy p {
+        font-size: 18px;
+        line-height: 1.55;
+      }
+
+      .hero-actions {
+        margin-top: 24px;
+      }
+
+      .hero-actions .btn {
+        min-height: 54px;
+        padding: 0 18px;
+        font-size: 13px;
+      }
+
+      .hero-note {
+        margin-top: 16px;
+        font-size: 13px;
+        line-height: 1.5;
       }
 
       .form-row,
