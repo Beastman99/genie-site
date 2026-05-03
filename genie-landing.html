@@ -1242,9 +1242,11 @@
         <div class="access-form">
           <div class="kicker">Get started</div>
           <h2>Start with your name and email.</h2>
-          <p class="lead">Fill this in and Genie will draft the email you can use to request your embryo file and move forward.</p>
+          <p class="lead">Fill this in and Genie will contact you with next steps.</p>
 
-          <form id="access-request-form">
+          <form id="access-request-form" action="https://formspree.io/f/mnjwjkvd" method="POST">
+            <input type="hidden" name="form_type" value="get_started">
+            <input type="hidden" name="source_page" value="genie-landing">
             <div class="form-row">
               <label>
                 Full name
@@ -1266,7 +1268,7 @@
               <textarea id="request-notes" name="notes" placeholder="Optional: tell us where you are in the process."></textarea>
             </label>
 
-            <button class="btn btn-dark" type="submit">Draft my clinic email</button>
+            <button class="btn btn-dark" type="submit">Get started</button>
             <div id="access-request-status" class="form-status" aria-live="polite"></div>
           </form>
         </div>
@@ -1275,7 +1277,9 @@
           <div class="kicker">Stay updated</div>
           <h3 style="font-size:36px; margin-top:8px;">Not ready to start yet?</h3>
           <p>Or sign up for updates.</p>
-          <form id="updates-form">
+          <form id="updates-form" action="https://formspree.io/f/mnjwjkvd" method="POST">
+            <input type="hidden" name="form_type" value="stay_updated">
+            <input type="hidden" name="source_page" value="genie-landing">
             <label>
               Email
               <input id="updates-email" name="email" type="email" placeholder="alex@example.com" required>
@@ -1535,73 +1539,57 @@
       }
     }
 
-    function buildClinicEmail(fields) {
-      const clinicLine = fields.clinic ? " at " + fields.clinic : "";
-      return [
-        "Subject: Request for embryo genomic file",
-        "",
-        "Hello,",
-        "",
-        "I am writing to request a copy of the embryo genomic file from my IVF testing" + clinicLine + ".",
-        "",
-        "If possible, please share the raw embryo genomic data file that was generated during testing, along with any file format notes needed to interpret it.",
-        "",
-        "Please let me know if you need any further consent or identification from me to release the file.",
-        "",
-        "Thank you,",
-        fields.name || ""
-      ].join("\n");
+    async function submitForm(form, statusElement, successMessage, subjectLine) {
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalLabel = submitButton.textContent;
+      const formData = new FormData(form);
+      formData.append("_subject", subjectLine);
+
+      statusElement.textContent = "";
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending...";
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: {
+            "Accept": "application/json"
+          },
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error("Submission failed.");
+        }
+
+        form.reset();
+        statusElement.textContent = successMessage;
+      } catch (error) {
+        statusElement.textContent = "Something went wrong. Please try again.";
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = originalLabel;
+      }
     }
 
-    function buildUpdatesNote(email) {
-      return [
-        "Subject: Genie updates",
-        "",
-        "Email:",
-        email,
-        "",
-        "Interest:",
-        "Please keep me updated as Genie opens to more families.",
-        "",
-        "Saved from the public Genie site."
-      ].join("\n");
-    }
-
-    accessRequestForm.addEventListener("submit", function (event) {
+    accessRequestForm.addEventListener("submit", async function (event) {
       event.preventDefault();
-      const fields = {
-        name: document.getElementById("request-name").value.trim(),
-        email: document.getElementById("request-email").value.trim(),
-        clinic: document.getElementById("request-clinic").value.trim(),
-        notes: document.getElementById("request-notes").value.trim()
-      };
-      const emailDraft = buildClinicEmail(fields);
-      const blob = new Blob([emailDraft], { type: "text/plain;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "genie-clinic-request-email.txt";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-      accessRequestStatus.textContent = "Draft ready. A clinic email template has been downloaded for you.";
+      await submitForm(
+        accessRequestForm,
+        accessRequestStatus,
+        "Thanks. Your details have been sent and we will be in touch shortly.",
+        "Genie get started"
+      );
     });
 
-    updatesForm.addEventListener("submit", function (event) {
+    updatesForm.addEventListener("submit", async function (event) {
       event.preventDefault();
-      const email = document.getElementById("updates-email").value.trim();
-      const note = buildUpdatesNote(email);
-      const blob = new Blob([note], { type: "text/plain;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = "genie-updates-note.txt";
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-      URL.revokeObjectURL(url);
-      updatesStatus.textContent = "Saved. Your reminder has been downloaded for later.";
+      await submitForm(
+        updatesForm,
+        updatesStatus,
+        "Thanks. You are on the updates list.",
+        "Genie stay updated"
+      );
     });
 
     if (heroEyeVideo) {
