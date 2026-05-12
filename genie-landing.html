@@ -2076,9 +2076,9 @@
     function renderReport(data) {
       const polygenicCount = data.traits.filter((trait) => trait.type === "polygenic_demo").length;
       document.getElementById("report-stats").innerHTML = [
-        { label: "Embryos shown", value: "2" },
-        { label: "Example traits", value: String(Object.keys(comparisonData.embryos[0].traits).length) },
-        { label: "Actual report", value: "Up to 20" }
+        { label: "Embryos selected", value: "A & B" },
+        { label: "Selected traits", value: String(Object.keys(comparisonData.embryos[0].traits).length) },
+        { label: "Other traits available", value: "16 " }
       ].map((item) => '<div class="report-stat"><span>' + item.label + '</span><strong>' + item.value + '</strong></div>').join("");
     }
 
@@ -2112,7 +2112,7 @@
       compareCards.style.display = "grid";
       reportBadge.textContent = selected.length + " selected";
       document.getElementById("report-heading").textContent = "Embryos compared side by side";
-      document.getElementById("report-description").textContent = "See a non-exhaustive slice of selected embryos side by side, with example traits shown against the general population.";
+      document.getElementById("report-description").textContent = "Preview report of selected embryos side by side, with specific trait probabilities shown against the general population.";
     }
 
     async function fetchSampleReport() {
