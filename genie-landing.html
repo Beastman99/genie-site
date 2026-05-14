@@ -2075,7 +2075,6 @@
         const importantTraits = ["intelligence", "eye_color", "height", "anxiety"];
         return '<div class="compare-card">' +
           '<div class="compare-card-header">' +
-            '<div><h3>' + embryo.id + '</h3><div class="compare-summary">' + embryo.summary + '</div></div>' +
             '<div class="embryo-chip">' + embryo.status + '</div>' +
           '</div>' +
           '<div class="compare-stats">' +
@@ -2099,7 +2098,7 @@
       compareCards.style.display = "grid";
       reportBadge.textContent = selected.length + " selected";
       document.getElementById("report-heading").textContent = "Embryo Report";
-      document.getElementById("report-description").textContent = "Selected embryos listedside by side.";
+      document.getElementById("report-description").textContent = "Selected embryos listed side by side.";
     }
 
     async function fetchSampleReport() {
